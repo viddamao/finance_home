@@ -15,11 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/viddamao/finance_home"
+    "url": "git+https://github.com/viddamao/finance_home.git"
   },
   "keywords": [
     "node",
     "heroku"
   ],
-  "license": "Apache"
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/viddamao/finance_home/issues"
+  },
+  "homepage": "https://github.com/viddamao/finance_home#readme",
+  "author": "viddamao"
 }
