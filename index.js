@@ -14,6 +14,12 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
+app.get('/index', function(request, response) {
+	console.log('render homepage');
+	response.render('pages/index');
+});
+
+
 app.get('/about', function(request, response) {
 	console.log('render about page');
 	response.render('pages/about');
