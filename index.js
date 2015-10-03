@@ -1,6 +1,16 @@
 var express = require('express');
 var app = express();
 
+var db = require('monk')("mongodb://localhost/finance_home");
+var users = db.get("users");
+var stocks = db.get("stocks");
+var articles = db.get("articles");
+//var comments = db.get("comments");
+users.index('id', {
+  unique: true
+});
+
+
 app.set('port', (process.env.PORT || 8080));
 
 app.use(express.static(__dirname + '/public'));
