@@ -14,6 +14,16 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
+app.get('/about', function(request, response) {
+	console.log('render about page');
+	response.render('pages/about');
+});
+
+
+app.get('/news', function(request, response) {
+	console.log('render news page');
+	response.render('pages/news');
+});
 
 
 app.listen(app.get('port'));
