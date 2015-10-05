@@ -1,4 +1,6 @@
 //clear db
+var db = require('monk')("mongodb://localhost:27017/finance_home");
+
 db.dropDatabase()
 var vidda = {
     _id: ObjectId("54428cf327a1b318f9aaee7c"),
@@ -11,11 +13,18 @@ var vidda = {
 }
 
 var stocks = [{
-    "name": "ÖÐ¹úÊ¯ÓÍ",
-    "id": "601857",
-	"price": 8.76,
-    "_id": ObjectId("544295060cae810b0056abaf"),
-	"articles":[ObjectId("54428cf327a1b318f9aaee7c")]
+        "_id" : ObjectId("560f8530d6387e405fa3b50e"),
+        "name" : "Google",
+        "id" : "00001",
+        "price" : 8.76,
+		"articles":[]
+}
+{
+        "_id" : ObjectId("560f8557d6387e405fa3b50f"),
+        "name" : "Cocacola",
+        "id" : "00002",
+        "price" : 12.23,
+		"articles":[]
 }]
 //create test users
 db.users.insert(vidda)
@@ -28,14 +37,14 @@ db.articles.insert([{
     "_id" :ObjectId("54428cf327a1b318f9aaee7d"),
 	"user_id": ObjectId("54428cf327a1b318f9aaee7c"),
     "title": "ABC",
-	"content":"askdnjsansjknandoabfdojbcjzbcs"
+	"content":"askdnjsansjknandoabfdojbcjzbcs",
     "date": new Date("Sat Nov 28 2014 00:00:00 GMT+0000 (UTC)"),
 	"likes" :10
 },{
     "_id" :ObjectId("54428cf327a1b318f9aaee7e"),
 	"user_id": ObjectId("54428cf327a1b318f9aaee7c"),
     "title": "lalala",
-	"content":"blablabla"
+	"content":"blablabla",
     "date": new Date("Sat Nov 28 2014 00:01:00 GMT+0000 (UTC)"),
 	"likes" :76
 }

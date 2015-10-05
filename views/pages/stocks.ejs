@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/header.ejs %>  
+	<script>
+	
+	
+		function navigateToStockById()	{
+			var ddl = document.getElementById("userInputStockId").value;
+			console.log("getting stock "+ddl);
+			window.open("/stocks/"+ddl);
+		}
+	</script>
+
+</head>
+
+
+<body>
+	
+	<% include ../partials/nav.ejs %>
+	
+	
+	<div class="jumbotron text-left">
+		<div class="container">
+			<h2>财富之家</h1>
+			<p>这是一个webpage</p>
+   
+		</div>
+	</div>
+
+	<div class="container">
+  
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<h3> stocks[_loadedStock].name </h3>
+				<ul>
+					<ul id = "stockIdDisplay"> </ul>
+					<ul> 8.23 </ul>
+					<ul>今 开：8.27</ul>
+					<ul>最 高：8.31</ul>
+				</ul>
+			</div>
+    
+			<div class="col-md-6">
+				<h3>Articles</h3>
+				<ul>
+					<ul><a href="http://money.finance.sina.com.cn/corp/view/vCB_AllMemordDetail.php?stockid=601857#_3454567">(601857) 中国石油：拟披露季报</a></ul>
+					<ul><a href="http://finance.sina.com.cn/stock/t/20150930/194023393260.shtml">9月30日AH股共计6只股票股价倒挂</a></ul>
+        
+				</ul>
+			</div>
+		</div> <!-- row -->
+ 
+	</div>
+
+	<script type="text/javascript">
+	
+		console.log("passed to storage");
+		var currentStockId = localStorage.getItem("stockId");
+		console.log(currentStockId);
+		document.getElementById("stockIdDisplay").innerHTML = currentStockId;
+	
+    
+	</script>
+
+</body>
+</html>

@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 
-var db = require('monk')("mongodb://localhost/finance_home");
+var db = require('monk')("mongodb://localhost:27017/finance_home");
+
 var users = db.get("users");
 var stocks = db.get("stocks");
 var articles = db.get("articles");
@@ -19,6 +20,12 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+//get user
+app.get('/api/user', function(req, res) {
+  res.json(req.user);
+});
+
+
 app.get('/', function(request, response) {
 	console.log('render homepage');
 	response.render('pages/index');
@@ -33,6 +40,11 @@ app.get('/about', function(request, response) {
 app.get('/news', function(request, response) {
 	console.log('render news page');
 	response.render('pages/news');
+});
+
+app.get('/stocks', function(request, response) {
+	console.log('render stocks page');
+	response.render('pages/stocks');
 });
 
 
