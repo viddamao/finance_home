@@ -14,14 +14,14 @@ var vidda = {
 var stocks = [{
         "_id" : ObjectId("560f8530d6387e405fa3b50e"),
         "name" : "Google",
-        "id" : "00001",
+        "id" : "600000",
         "price" : 8.76,
 		"articles":[]
 }
 {
         "_id" : ObjectId("560f8557d6387e405fa3b50f"),
         "name" : "Cocacola",
-        "id" : "00002",
+        "id" : "600001",
         "price" : 12.23,
 		"articles":[]
 }]

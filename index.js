@@ -49,7 +49,7 @@ db.once('open', function() {
 		if (err) return console.error(err);
 		console.dir(vidda);
 	});
-
+	
 
 	mongoose.connect("mongodb://localhost:27017/finance_home");	
 });
@@ -89,7 +89,18 @@ app.get('/news', function(request, response) {
 
 app.get('/stocks', function(request, response) {
 	console.log('render stocks page');
-	response.render('pages/stocks');
+/*	var stockVariables = stocks.findOne({ id: "600000" }).exec(function (err, movie) {
+	if (err) // handle this
+		console.log("can't find stock in database");
+});
+*/
+
+	var stockVariables = {
+		name: "Google",
+		start: 608.27,
+		highest:618.31
+	}
+	response.render('pages/stocks',stockVariables);
 });
 
 var http = require('http');
