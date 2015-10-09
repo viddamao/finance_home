@@ -44,11 +44,11 @@
 							<td><a href=	<%=articles[i].href%>	>	<%=articles[i].title%>	</a></td>
 						</tr>
 						<tr>
-							<td><%=articles[i].author_name%> </td>
-							<td>.             </td>
-							<td><%= articles[i].date.getMonth()+1 %> / </td>
-							<td><%= articles[i].date.getDate()+1 %> / </td>
-							<td><%= articles[i].date.getFullYear() %> </td>
+							<td><%=articles[i].author_name%> • </td>
+							<% week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"] %>
+							<td><%= week[articles[i].date.getDay()] %> , </td>
+							<td><%= articles[i].date.getMonth()+1 %> -   </td>
+							<td>  <%= articles[i].date.getDate()+1 %>  </td>
 						</tr>
 					<% } %>
 				</table>

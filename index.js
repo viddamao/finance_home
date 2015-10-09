@@ -107,7 +107,7 @@ mongoose.connect(uristring, function (err, res) {
 	"stock_uid": "600000",
 	"stock_id":google._id,	
 	"stock_name": "Google",
-    "title": "ABC",
+    "title": "标题啦啦啦啦啦啦",
 	"href":"www.google.com",
 	"content":"askdnjsansjknandoabfdojbcjzbcs",
     "date": new Date("Sat Nov 28 2014 00:00:00 GMT+0000 (UTC)"),
@@ -117,15 +117,29 @@ mongoose.connect(uristring, function (err, res) {
 	var article2 = new article({
 	"author_name": "Vidda",
 	"author_id":vidda._id,
-	"stock_uid": "600001",
-	"stock_id":coke._id,
-	"stock_name": "coke",
+	"stock_uid": "600000",
+	"stock_id":google._id,
+	"stock_name": "google",
     "title": "lalala",
 	"href":"www.facebook.com",
 	"content":"blablabla",
-    "date": new Date("Sat Nov 28 2014 00:01:00 GMT+0000 (UTC)"),
+    "date": new Date("Thu Oct 8 2015 00:01:00 GMT+0000 (UTC)"),
 	"likes" :76
 	});
+	
+	var article3 = new article({
+	"author_name": "Vidda",
+	"author_id":vidda._id,
+	"stock_uid": "600001",
+	"stock_id":coke._id,
+	"stock_name": "coke",
+    "title": "搞个大新闻",
+	"href":"www.facebook.com",
+	"content":"blablabla",
+    "date": new Date("Sat Oct 10 2015 00:01:00 GMT+0000 (UTC)"),
+	"likes" :11
+	});
+	
 	article1.save(function(err, article1) {
 		if (err) return console.error(err);
 		console.dir(article1);
@@ -136,8 +150,15 @@ mongoose.connect(uristring, function (err, res) {
 		console.dir(article2);
 	});
 	
+	article3.save(function(err, article3) {
+		if (err) return console.error(err);
+		console.dir(article3);
+	});
+	
+	
 	google.articles.push(article1._id);
-	coke.articles.push(article2._id);
+	google.articles.push(article2._id);
+	coke.articles.push(article3._id);
 	
 	
 	google.save(function(err, google) {
@@ -196,7 +217,7 @@ app.post('/stocks/', function(request, response) {
 	if (err) // handle this
 		console.log("can't find stock in database");
 	
-	var articleQuery = article.find({stock_uid: userQuery.userInputStockId},"author_name title href date",function (err, articleResult) {
+	var articleQuery = article.find({stock_uid: userQuery.userInputStockId},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
 		console.log("can't find article in database");
 	
