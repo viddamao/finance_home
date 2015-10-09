@@ -249,13 +249,6 @@ function getStockData(callback) {
 
 */
 
-app.locals.format = function(input) {
-		var format = moment(new Date(input))
-			.format("MM Do YYYY, h:mm:ss a");
-		return format
-	
-	
-};
 
 app.listen(app.get('port'));
   
