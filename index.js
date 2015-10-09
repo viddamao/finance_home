@@ -102,6 +102,10 @@ app.set('port', (process.env.PORT || 8080));
 
 app.use(express.static(__dirname + '/public'));
 
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded());
+
+
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -130,15 +134,19 @@ app.get('/news', function(request, response) {
 	response.render('pages/news');
 });
 
-app.get('/stocks', function(request, response) {
+
+app.post('/stocks/', function(request, response) {
 	console.log('render stocks page');
+	var userQuery = request.body;
+	console.log(userQuery);
 	//var userInput = localStorage.getItem("stockId");
-	var stockQuery = stock.findOne({ id: "600000" },"name start high",function (err, result) {
+	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id start high",function (err, result) {
 	if (err) // handle this
 		console.log("can't find stock in database");
 
 	var stockVariables = {
 		name: result.name,
+		id :result.id,
 		high: result.high,
 		start:result.start
 	}

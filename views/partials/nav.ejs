@@ -14,11 +14,13 @@
 	  
     </ul>
     <ul class="nav navbar-nav navbar-right">
+	<form method = "post" action="/stocks/">
       <li class="navbar-right">
 			Search box:<br>
-			<input type="text" id="userInputStockId">
-			<input type="button" value="Submit" onclick = "navigateToStockById()">
+			<input type="text" name="userInputStockId">
+			<input type="submit" value="Submit">
       </li>
+	</form> 
     </ul>
   </div>
 </nav>
