@@ -1,5 +1,4 @@
 //clear db
-var db = require('monk')("mongodb://localhost:27017/finance_home");
 
 db.dropDatabase()
 var vidda = {
@@ -9,7 +8,7 @@ var vidda = {
     gender: "male",
     given_name: "Wenjun",
     id: "0000000001",
-    name: "Vidda"
+    username: "Vidda"
 }
 
 var stocks = [{
@@ -35,7 +34,7 @@ db.stocks.insert(stocks, {
 //create test budgets
 db.articles.insert([{
     "_id" :ObjectId("54428cf327a1b318f9aaee7d"),
-	"user_id": ObjectId("54428cf327a1b318f9aaee7c"),
+	"author_id": ObjectId("54428cf327a1b318f9aaee7c"),
     "title": "ABC",
 	"content":"askdnjsansjknandoabfdojbcjzbcs",
     "date": new Date("Sat Nov 28 2014 00:00:00 GMT+0000 (UTC)"),
