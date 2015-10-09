@@ -2,11 +2,19 @@ var express = require('express');
 var app = express();
 
 var mongoose = require('mongoose');
-
 var db = mongoose.connection;
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
-db.on('error', console.error);
-db.once('open', function() {
+var uristring = "mongodb://localhost:27017/finance_home";
+mongoose.connect(uristring, function (err, res) {
+  if (err) { 
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + uristring);
+  }
+});	
+
+	
 	var userSchema = new mongoose.Schema({
 		username:String,
 		email: String,
@@ -19,7 +27,8 @@ db.once('open', function() {
 	var stocksSchema = new mongoose.Schema({
         name : String,
         id : String,
-        price : Number,
+        high : Number,
+		start: Number,
 		articles:[ObjectId]	
 	});
 	
@@ -32,9 +41,22 @@ db.once('open', function() {
 		
 	});
 	
-	var users = mongoose.model("user",userSchema);
-	var stocks = mongoose.model("stock",stocksSchema);
-	var articles = mongoose.model("article",articleSchema);
+	var user = mongoose.model("user",userSchema);
+	var stock = mongoose.model("stock",stocksSchema);
+	var article = mongoose.model("article",articleSchema);
+	
+	user.remove({}, function(err) {
+	if (err) {
+		console.log ('error deleting old data.');
+	}
+	});
+	
+	stock.remove({}, function(err) {
+	if (err) {
+		console.log ('error deleting old data.');
+	}
+	});
+	
 	
 	var vidda = new user({
 		email: "viddamao@gmail.com",
@@ -50,9 +72,30 @@ db.once('open', function() {
 		console.dir(vidda);
 	});
 	
-
-	mongoose.connect("mongodb://localhost:27017/finance_home");	
+	var google = new stock({
+        "name" : "Google",
+        "id" : "600000",
+        "high" : 618.76,
+		"start" : 600.12,
+		"articles":[]
 });
+	var coke = new stock({
+        "name" : "Cocacola",
+        "id" : "600001",
+        "high" : 15.23,
+		"start": 12.33,
+		"articles":[]
+});
+	google.save(function(err, google) {
+		if (err) return console.error(err);
+		console.dir(google);
+	});
+	
+	coke.save(function(err, coke) {
+		if (err) return console.error(err);
+		console.dir(coke);
+	});
+	
 
 
 app.set('port', (process.env.PORT || 8080));
@@ -89,18 +132,22 @@ app.get('/news', function(request, response) {
 
 app.get('/stocks', function(request, response) {
 	console.log('render stocks page');
-/*	var stockVariables = stocks.findOne({ id: "600000" }).exec(function (err, movie) {
+	//var userInput = localStorage.getItem("stockId");
+	var stockQuery = stock.findOne({ id: "600000" },"name start high",function (err, result) {
 	if (err) // handle this
 		console.log("can't find stock in database");
-});
-*/
 
 	var stockVariables = {
-		name: "Google",
-		start: 608.27,
-		highest:618.31
+		name: result.name,
+		high: result.high,
+		start:result.start
 	}
-	response.render('pages/stocks',stockVariables);
+	
+	response.render('pages/stocks',stockVariables);	
+	});
+	
+	
+	
 });
 
 var http = require('http');
