@@ -36,6 +36,7 @@ db.articles.insert([{
     "_id" :ObjectId("54428cf327a1b318f9aaee7d"),
 	"author_id": ObjectId("54428cf327a1b318f9aaee7c"),
     "title": "ABC",
+	"href":"www.baidu.com",
 	"content":"askdnjsansjknandoabfdojbcjzbcs",
     "date": new Date("Sat Nov 28 2014 00:00:00 GMT+0000 (UTC)"),
 	"likes" :10
@@ -43,6 +44,7 @@ db.articles.insert([{
     "_id" :ObjectId("54428cf327a1b318f9aaee7e"),
 	"user_id": ObjectId("54428cf327a1b318f9aaee7c"),
     "title": "lalala",
+	"href":"www.baidu.com",
 	"content":"blablabla",
     "date": new Date("Sat Nov 28 2014 00:01:00 GMT+0000 (UTC)"),
 	"likes" :76

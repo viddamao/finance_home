@@ -6,6 +6,7 @@
 </head>
 
 
+
 <body>
 	
 	<% include ../partials/nav.ejs %>
@@ -37,9 +38,20 @@
     
 			<div class="col-md-6">
 				<h3>Articles</h3>
+				<table>
+					<% for(var i=0; i < articles.length; i++) { %>
+						<tr>
+							<td><a href=	<%=articles[i].href%>	>	<%=articles[i].title%>	</a></td>
+							<td><%=articles[i].author_name%> </td>
+						
+							<td><%= format(articles[i].date) %> </td>
+						</tr>
+					<% } %>
+				</table>
+					
+				
 				<ul>
-					<ul><a href="http://money.finance.sina.com.cn/corp/view/vCB_AllMemordDetail.php?stockid=601857#_3454567">(601857) 中国石油：拟披露季报</a></ul>
-					<ul><a href="http://finance.sina.com.cn/stock/t/20150930/194023393260.shtml">9月30日AH股共计6只股票股价倒挂</a></ul>
+					<ul></ul>
         
 				</ul>
 			</div>

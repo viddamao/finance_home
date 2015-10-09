@@ -1,18 +1,6 @@
 var user;
 
-$.post("/stocks/", { data : { "stockId" : stockId } }, function(callback) {
-		
+$(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
 });
-
-
-function navigateToStockById()	{
-	
-	
-
-
-	var stockId = document.getElementById("userInputStockId").value;
-	console.log("getting stock "+stockId);
-	localStorage.setItem("stockId",stockId);
-
-	window.location.assign("/stocks");
-}
