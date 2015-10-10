@@ -240,6 +240,13 @@ app.post('/stocks/', function(request, response) {
 	
 	
 });
+
+app.get('/articles', function(request, response) {
+	console.log('render articles page');
+	response.render('pages/articles');
+});
+
+
 /*
 var http = require('http');
 

@@ -1,6 +1,9 @@
 var user;
 
-$(".nav a").on("click", function(){
-   $(".nav").find(".active").removeClass("active");
-   $(this).parent().addClass("active");
-});
+$(window).load(function () {
+        $('ul.nav > li').click(function (e) {
+           
+            $('ul.nav > li').removeClass('active');
+            $(this).addClass('active');                
+        });            
+    });
