@@ -1,9 +1,0 @@
-API Key:28295966-984e-413b-95f0-a70829a0e043
-Description:mongodbAPI
-
-yahoo:
-Client ID (Consumer Key)
-dj0yJmk9S1M0OWhzQUNraXd4JmQ9WVdrOVZEWnlhV1ZKTXpBbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kYQ--
-
-Client Secret (Consumer Secret)
-809189f2e84ce375e08ab417c35d29fa3680c5b4
