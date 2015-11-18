@@ -171,7 +171,9 @@ mongoose.connect(uristring, function (err, res) {
 		console.dir(coke);
 	});
 	
-app.set('port', (process.env.PORT || 8080));
+
+var port = normalizePort(process.env.PORT || '8080');
+app.set('port', port));
 
 app.use(express.static(__dirname + '/public'));
 
