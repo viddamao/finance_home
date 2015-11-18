@@ -35,17 +35,17 @@ app.set('view engine', 'ejs');
 
 
 var index = require('./routes/index');
-var about = require('./routes/about');
-var articles = require('./routes/articles');
-var news = require('./routes/news');
-var search = require('./routes/search');
+//var about = require('./routes/about');
+//var articles = require('./routes/articles');
+//var news = require('./routes/news');
+//var search = require('./routes/search');
 
 
 app.use('/', index);
-app.use('/', about);
-app.use('/', news);
-app.use('/', articles);
-app.use('/', search);
+//app.use('/', about);
+//app.use('/', news);
+//app.use('/', articles);
+//app.use('/', search);
 
 
 
