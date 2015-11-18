@@ -175,6 +175,37 @@ mongoose.connect(uristring, function (err, res) {
  * Normalize a port into a number, string, or false.
  */
 
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '18080');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+//引入socket模块
+var serverSocket = require('./websocket/server_socket');
+serverSocket(server);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -191,9 +222,47 @@ function normalizePort(val) {
   return false;
 }
 
-	
-var port = normalizePort(process.env.PORT || '8080');
-app.set('port', port));
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -300,7 +369,7 @@ function getStockData(callback) {
 */
 
 
-app.listen(app.get('port'));
+//app.listen(app.get('port'));
   
 console.log('Node app is running on port', app.get('port'));
 
