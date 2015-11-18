@@ -227,14 +227,16 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-
+var index = require('./routes/index');
+app.use('/', index);
+/* 
 //get user
 app.get('/api/user', function(req, res) {
   res.json(req.user);
 });
+ */
 
-
-app.get('/', function(request, response) {
+/* app.get('/', function(request, response) {
 	console.log('render homepage');
 	response.render('pages/index');
 });
@@ -250,8 +252,8 @@ app.get('/news', function(request, response) {
 	response.render('pages/news');
 });
 
-
-app.post('/stocks/', function(request, response) {
+ */
+/* app.post('/stocks/', function(request, response) {
 	console.log('render stocks page');
 	var userQuery = request.body;
 	//console.log(userQuery);
@@ -288,7 +290,7 @@ app.get('/articles', function(request, response) {
 	console.log('render articles page');
 	response.render('pages/articles');
 });
-
+ */
 
 /*
 var http = require('http');
