@@ -1,67 +1,101 @@
-//clear db
-
-db.dropDatabase()
-var vidda = {
-    _id: ObjectId("54428cf327a1b318f9aaee7c"),
-    email: "viddamao@gmail.com",
-    family_name: "Mao",
-    gender: "male",
-    given_name: "Wenjun",
-    id: "0000000001",
-    username: "Vidda"
-}
-
-var stocks = [{
-        "_id" : ObjectId("560f8530d6387e405fa3b50e"),
+	var vidda = new user({
+		email: "viddamao@gmail.com",
+		family_name: "Mao",
+		gender: "male",
+		given_name: "Wenjun",
+		id: "0000000001",
+		username: "Vidda"
+	});
+	
+	vidda.save(function(err, vidda) {
+		if (err) return console.error(err);
+		//console.dir(vidda);
+	});
+	
+	var google = new stock({
         "name" : "Google",
         "id" : "600000",
-        "price" : 8.76,
+        "high" : 618.76,
+		"start" : 600.12,
 		"articles":[]
-}
-{
-        "_id" : ObjectId("560f8557d6387e405fa3b50f"),
+});
+	var coke = new stock({
         "name" : "Cocacola",
         "id" : "600001",
-        "price" : 12.23,
+        "high" : 15.23,
+		"start": 12.33,
 		"articles":[]
-}]
-//create test users
-db.users.insert(vidda)
-//create test balances
-db.stocks.insert(stocks, {
-    multi: true
-})
-//create test budgets
-db.articles.insert([{
-    "_id" :ObjectId("54428cf327a1b318f9aaee7d"),
-	"author_id": ObjectId("54428cf327a1b318f9aaee7c"),
-    "title": "ABC",
-	"href":"www.baidu.com",
+});
+	
+	
+
+	var article1 = new article({
+	"author_name": "Vidda",
+	"author_id":vidda._id,
+	"stock_uid": "600000",
+	"stock_id":google._id,	
+	"stock_name": "Google",
+    "title": "标题啦啦啦啦啦啦",
+	"href":"www.google.com",
 	"content":"askdnjsansjknandoabfdojbcjzbcs",
     "date": new Date("Sat Nov 28 2014 00:00:00 GMT+0000 (UTC)"),
 	"likes" :10
-},{
-    "_id" :ObjectId("54428cf327a1b318f9aaee7e"),
-	"user_id": ObjectId("54428cf327a1b318f9aaee7c"),
+	});
+	
+	var article2 = new article({
+	"author_name": "Vidda",
+	"author_id":vidda._id,
+	"stock_uid": "600000",
+	"stock_id":google._id,
+	"stock_name": "google",
     "title": "lalala",
-	"href":"www.baidu.com",
+	"href":"www.facebook.com",
 	"content":"blablabla",
-    "date": new Date("Sat Nov 28 2014 00:01:00 GMT+0000 (UTC)"),
+    "date": new Date("Thu Oct 8 2015 00:01:00 GMT+0000 (UTC)"),
 	"likes" :76
-}
-], {
-    multi: true
-})
-//sample query, find all users
-cursor = db.users.find();
-while(cursor.hasNext()) {
-    printjson(cursor.next());
-}
+	});
+	
+	var article3 = new article({
+	"author_name": "Vidda",
+	"author_id":vidda._id,
+	"stock_uid": "600001",
+	"stock_id":coke._id,
+	"stock_name": "coke",
+    "title": "搞个大新闻",
+	"href":"www.facebook.com",
+	"content":"blablabla",
+    "date": new Date("Sat Oct 10 2015 00:01:00 GMT+0000 (UTC)"),
+	"likes" :11
+	});
+	
+	article1.save(function(err, article1) {
+		if (err) return console.error(err);
+		//console.dir(article1);
+	});
+	
+	article2.save(function(err, article2) {
+		if (err) return console.error(err);
+		//console.dir(article2);
+	});
+	
+	article3.save(function(err, article3) {
+		if (err) return console.error(err);
+		//console.dir(article3);
+	});
+	
+	
+	google.articles.push(article1._id);
+	google.articles.push(article2._id);
+	coke.articles.push(article3._id);
+	
+	
+	google.save(function(err, google) {
+		if (err) return console.error(err);
+		//console.dir(google);
+	});
+	
+	coke.save(function(err, coke) {
+		if (err) return console.error(err);
+		//console.dir(coke);
+	});
 
-//find articles for a certain stock
-cursor = db.stocks.find({
-    user_id: ObjectId("54428cf327a1b318f9aaee7c")
-});
-while(cursor.hasNext()) {
-    printjson(cursor.next());
-}
