@@ -229,6 +229,7 @@ app.set('view engine', 'ejs');
 
 var index = require('./routes/index');
 app.use('/', index);
+
 /* 
 //get user
 app.get('/api/user', function(req, res) {
