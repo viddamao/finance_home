@@ -146,7 +146,8 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '18080');
-app.set('port', 18080);
+console.log(port);
+app.set('port', port);
 
 /**
  * Create HTTP server.
