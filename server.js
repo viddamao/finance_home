@@ -230,6 +230,21 @@ app.set('view engine', 'ejs');
 var index = require('./routes/index');
 app.use('/', index);
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('pages/error');
+});
+
+
 /* 
 //get user
 app.get('/api/user', function(req, res) {
