@@ -11,9 +11,9 @@ var pas = 'e4e1e426f9154811be0e75e76efe343c';
 
 mongoose.connect( uristring ,{user:user,pass:pas}, function (err, res) {
   if (err) { 
-    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    console.log ('ERROR connecting to:  ' + err);
   } else {
-    console.log ('Succeeded connected to: ' + uristring);
+    console.log ('Connection success');
   }
 });	
 
