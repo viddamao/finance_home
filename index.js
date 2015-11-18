@@ -5,7 +5,12 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var uristring = "mongodb://localhost:27017/finance_home";
+var uristring = 'mongodb://mongo.duapp.com:8908/VhpiFanakhuHdTjVHxMd';
+var user = '9100bd6357d945a9ac962a65957c2a53';
+var pas = 'e4e1e426f9154811be0e75e76efe343c';
+
+mongoose.connect( url ,{user:user,pass:pas});
+/*
 mongoose.connect(uristring, function (err, res) {
   if (err) { 
     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
@@ -13,7 +18,7 @@ mongoose.connect(uristring, function (err, res) {
     console.log ('Succeeded connected to: ' + uristring);
   }
 });	
-
+*/
 	
 	var userSchema = new mongoose.Schema({
 		username:String,
