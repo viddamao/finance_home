@@ -18,9 +18,9 @@ mongoose.connect( uristring ,{user:user,pass:pas}, function (err, res) {
 });	
 
 
-var Stocks = require('../models/stocks');
-var Articles = require('../models/articles');
-var Users = require('../models/users');	
+var Stocks = require('./models/stocks');
+var Articles = require('./models/articles');
+var Users = require('./models/users');	
 	
 
 app.use(express.static(__dirname + '/public'));
