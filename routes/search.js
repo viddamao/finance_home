@@ -1,0 +1,41 @@
+var express = require('express');
+var router = express.Router();
+
+
+/* GET article page. */
+router.post('/stocks', function(request, response) {
+	console.log('render stocks page');
+	var userQuery = request.body;
+	//console.log(userQuery);
+	//var userInput = localStorage.getItem("stockId");
+	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id start high articles",function (err, result) {
+	if (err) // handle this
+		console.log("can't find stock in database");
+	
+	var articleQuery = article.find({stock_uid: userQuery.userInputStockId},"author_name title href date likes",function (err, articleResult) {
+	if (err) // handle this
+		console.log("can't find article in database");
+	
+	
+	var stockVariables = {
+		name: result.name,
+		id :result.id,
+		high: result.high,
+		start:result.start,
+		articles:articleResult
+	};
+	
+	response.render('pages/stocks',stockVariables);	
+	
+	});
+	
+	
+	});
+	
+	
+	
+});
+
+
+ 
+module.exports = router;

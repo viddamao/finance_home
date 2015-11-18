@@ -23,17 +23,17 @@ app.set('view engine', 'ejs');
 
 
 var index = require('./routes/index');
-//var about = require('./routes/about');
-//var articles = require('./routes/articles');
-//var news = require('./routes/news');
-//var search = require('./routes/search');
+var about = require('./routes/about');
+var articles = require('./routes/articles');
+var news = require('./routes/news');
+var search = require('./routes/search');
 
 
 app.use('/', index);
-//app.use('/', about);
-//app.use('/', news);
-//app.use('/', articles);
-//app.use('/', search);
+app.use('/', about);
+app.use('/', news);
+app.use('/', articles);
+app.use('/', search);
 
 
 // catch 404 and forward to error handler
@@ -52,61 +52,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-/* app.get('/', function(request, response) {
-	console.log('render homepage');
-	response.render('pages/index');
-});
 
-app.get('/about', function(request, response) {
-	console.log('render about page');
-	response.render('pages/about');
-});
-
-
-app.get('/news', function(request, response) {
-	console.log('render news page');
-	response.render('pages/news');
-});
-
- */
-/* app.post('/stocks/', function(request, response) {
-	console.log('render stocks page');
-	var userQuery = request.body;
-	//console.log(userQuery);
-	//var userInput = localStorage.getItem("stockId");
-	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id start high articles",function (err, result) {
-	if (err) // handle this
-		console.log("can't find stock in database");
-	
-	var articleQuery = article.find({stock_uid: userQuery.userInputStockId},"author_name title href date likes",function (err, articleResult) {
-	if (err) // handle this
-		console.log("can't find article in database");
-	
-	
-	var stockVariables = {
-		name: result.name,
-		id :result.id,
-		high: result.high,
-		start:result.start,
-		articles:articleResult
-	};
-	
-	response.render('pages/stocks',stockVariables);	
-	
-	});
-	
-	
-	});
-	
-	
-	
-});
-
-app.get('/articles', function(request, response) {
-	console.log('render articles page');
-	response.render('pages/articles');
-});
- */
 
 /*
 var http = require('http');
