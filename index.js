@@ -219,7 +219,7 @@ console.log('Node app is running on port', app.get('port'));
 app.use(express.static(__dirname + '/public'));
 
 var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // views is directory for all template files
