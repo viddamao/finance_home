@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+/* GET about page. */
+router.get('/about', function(req, res, next) {
 	console.log('render about page');
-	res.render('pages/about');
+	res.send('pages/about');
 });
 
 module.exports = router;

@@ -30,7 +30,7 @@ var about = require('./routes/about');
 
 
 app.use('/', index);
-app.use('/', about);
+app.use('/about', about);
 //app.use('/', news);
 //app.use('/', articles);
 //app.use('/', search);
