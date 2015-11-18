@@ -1,22 +1,10 @@
 var express = require('express');
 var app = express();
 
-var mongoose = require('mongoose');
-//var db = mongoose.connection;
-var ObjectId = mongoose.Schema.Types.ObjectId;
+//var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var uristring = 'mongodb://mongo.duapp.com:8908/VhpiFanakhuHdTjVHxMd';
-var user = '9100bd6357d945a9ac962a65957c2a53';
-var pas = 'e4e1e426f9154811be0e75e76efe343c';
-
-mongoose.connect( uristring ,{user:user,pass:pas}, function (err, res) {
-  if (err) { 
-    console.log ('ERROR connecting to:  ' + err);
-  } else {
-    console.log ('Connection success');
-  }
-});	
-
+var bae = require('./bae');
+bae.getConnect();
 
 var Stocks = require('./models/stocks');
 var Articles = require('./models/articles');
