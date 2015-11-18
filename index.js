@@ -87,7 +87,7 @@ mongoose.connect(uristring, function (err, res) {
 	
 	vidda.save(function(err, vidda) {
 		if (err) return console.error(err);
-		console.dir(vidda);
+		//console.dir(vidda);
 	});
 	
 	var google = new stock({
@@ -154,17 +154,17 @@ mongoose.connect(uristring, function (err, res) {
 	
 	article1.save(function(err, article1) {
 		if (err) return console.error(err);
-		console.dir(article1);
+		//console.dir(article1);
 	});
 	
 	article2.save(function(err, article2) {
 		if (err) return console.error(err);
-		console.dir(article2);
+		//console.dir(article2);
 	});
 	
 	article3.save(function(err, article3) {
 		if (err) return console.error(err);
-		console.dir(article3);
+		//console.dir(article3);
 	});
 	
 	
@@ -175,12 +175,12 @@ mongoose.connect(uristring, function (err, res) {
 	
 	google.save(function(err, google) {
 		if (err) return console.error(err);
-		console.dir(google);
+		//console.dir(google);
 	});
 	
 	coke.save(function(err, coke) {
 		if (err) return console.error(err);
-		console.dir(coke);
+		//console.dir(coke);
 	});
 
 
