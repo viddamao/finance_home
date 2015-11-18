@@ -2,7 +2,7 @@
   "name": "finance-home",
   "version": "0.0.1",
   "description": "A simple finance BBS",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
