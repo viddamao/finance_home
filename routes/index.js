@@ -10,7 +10,9 @@ router.use(function timeLog(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res) {
 	console.log('render homepage');
-	res.render('./pages/index');
+	res.render('./pages/index', function(err, html) {
+		res.send(html);
+	});
 });
 
 module.exports = router;
