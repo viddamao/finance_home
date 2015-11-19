@@ -1,21 +1,50 @@
 var express = require('express');
 var app = express();
 
-//var ObjectId = mongoose.Schema.Types.ObjectId;
 
+//import mongoose module
 var bae = require('./bae');
 bae.getConnect();
 
+//import models
 var Stocks = require('./models/stocks');
 var Articles = require('./models/articles');
 var Users = require('./models/users');	
 	
 
-app.use(express.static(__dirname + '/public'));
-
 var bodyParser = require('body-parser')
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);	
+
+
+	
+
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(session({
+  secret: 'lalalalala',
+  resave:false,
+  saveUninitialized:false, 
+  cookie: { maxAge: 3600000 },
+  store:new MongoStore({
+            mongooseConnection: bae.mongoose.connection 
+            })
+}));
+
+app.use(function(req, res, next){
+  if(req.session.loggedIn){
+        res.locals.authenticated = true;
+        User.findById(req.session.loggedIn, function(err, doc){
+            if(err) return next(err);
+            res.locals.me = doc;
+            next();
+        });
+  } else {
+        res.locals.authenticated = false;
+        next();
+  }
+});
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
