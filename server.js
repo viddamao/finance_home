@@ -12,7 +12,7 @@ var Articles = require('./models/articles');
 var Users = require('./models/users');	
 	
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
 
