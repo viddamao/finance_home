@@ -18,7 +18,6 @@ var MongoStore = require('connect-mongo')(session);
 
 
 	
-
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
