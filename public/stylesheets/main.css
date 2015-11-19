@@ -1,11 +1,23 @@
 .jumbotron {
   background: black;
   color: white;
-  padding-bottom: 30px; }
-  .jumbotron p {
-    color: white;
+  padding-bottom: 30px; 
+ }
+ 
+ #bg{
+	background:url('../background.jpg') no-repeat center center;
+    height: 225px;
+}
+ 
+  #bg p {
+    color: black;
     max-width: 75%;
 }
+
+  #bg h2 {
+    color: black;
+}
+
   .navbar + .jumbotron {
     margin-top: -20px; }
 
@@ -29,7 +41,3 @@ table {
     border: 0;
     }
 	
-#bg{
-	background:url('../background.jpg') no-repeat center center;
-    height: 225px;
-}
