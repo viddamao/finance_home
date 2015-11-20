@@ -6,7 +6,7 @@ var router = express.Router();
 router.post('/stocks', function(request, response) {
 	console.log('render stocks page');
 	var userQuery = request.body;
-	//console.log(userQuery);
+	console.log(userQuery);
 	//var userInput = localStorage.getItem("stockId");
 	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id articles",function (err, result) {
 	if (err) // handle this
