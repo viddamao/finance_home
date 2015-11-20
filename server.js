@@ -18,11 +18,10 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
 var favicon = require('serve-favicon');
-	
-app.use(favicon(__dirname + '/public/favicon.ico'));
+var finalhandler = require('finalhandler');
+ 
+var _favicon = favicon(__dirname + '/public/favicon.ico');	
 app.use(express.static(__dirname + '/public'));
-
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -130,7 +129,18 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(app,function onRequest(req, res) {
+  var done = finalhandler(req, res);
+ 
+  _favicon(req, res, function onNext(err) {
+    if (err) return done(err);
+ 
+    // continue to process the request here, etc. 
+ 
+    res.statusCode = 404;
+    res.end('oops');
+  });
+});
 
 /**
  * Listen on provided port, on all network interfaces.
