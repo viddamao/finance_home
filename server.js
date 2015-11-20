@@ -17,7 +17,7 @@ var User = require('./models/users');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
-
+var favicon = require('serve-favicon');
 	
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static(__dirname + '/public'));
