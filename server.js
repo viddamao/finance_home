@@ -7,8 +7,13 @@ var bae = require('./bae');
 bae.getConnect();
 
 
+//import models
+var Stock = require('./models/stocks');
+var Article = require('./models/articles');
+var User = require('./models/users');	
+	
 
-	var vidda = new user({
+	var vidda = new User({
 		email: "viddamao@gmail.com",
 		family_name: "Mao",
 		gender: "male",
@@ -22,14 +27,14 @@ bae.getConnect();
 		//console.dir(vidda);
 	});
 	
-	var google = new stock({
+	var google = new Stock({
         "name" : "Google",
         "id" : "600000",
         "high" : 618.76,
 		"start" : 600.12,
 		"articles":[]
 });
-	var coke = new stock({
+	var coke = new Stock({
         "name" : "Cocacola",
         "id" : "600001",
         "high" : 15.23,
@@ -39,7 +44,7 @@ bae.getConnect();
 	
 	
 
-	var article1 = new article({
+	var article1 = new Article({
 	"author_name": "Vidda",
 	"author_id":vidda._id,
 	"stock_uid": "600000",
@@ -52,7 +57,7 @@ bae.getConnect();
 	"likes" :10
 	});
 	
-	var article2 = new article({
+	var article2 = new Article({
 	"author_name": "Vidda",
 	"author_id":vidda._id,
 	"stock_uid": "600000",
@@ -65,7 +70,7 @@ bae.getConnect();
 	"likes" :76
 	});
 	
-	var article3 = new article({
+	var article3 = new Article({
 	"author_name": "Vidda",
 	"author_id":vidda._id,
 	"stock_uid": "600001",
@@ -109,14 +114,8 @@ bae.getConnect();
 		//console.dir(coke);
 	});
 
-
-
-//import models
-var Stocks = require('./models/stocks');
-var Articles = require('./models/articles');
-var Users = require('./models/users');	
 	
-
+	
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
