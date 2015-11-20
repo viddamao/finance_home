@@ -6,6 +6,7 @@ var app = express();
 var bae = require('./bae');
 bae.getConnect();
 
+markdown = require('markdown').markdown;
 
 //import models
 var Stock = require('./models/stocks');
@@ -18,8 +19,10 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
 
 
+app.use(favicon(__dirname + '/public/favicon.ico'));
 	
 app.use(express.static(__dirname + '/public'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
