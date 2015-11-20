@@ -8,7 +8,7 @@ router.post('/stocks', function(request, response) {
 	var userQuery = request.body;
 	//console.log(userQuery);
 	//var userInput = localStorage.getItem("stockId");
-	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id start high articles",function (err, result) {
+	var stockQuery = stock.findOne({ id: userQuery.userInputStockId },"name id articles",function (err, result) {
 	if (err) // handle this
 		console.log("can't find stock in database");
 	
@@ -20,8 +20,6 @@ router.post('/stocks', function(request, response) {
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
-		high: result.high,
-		start:result.start,
 		articles:articleResult
 	};
 	
