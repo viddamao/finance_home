@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 //import models
-var stock = require('./models/stocks');
-var article = require('./models/articles');
+var stock = require('../models/stocks');
+var article = require('../models/articles');
 
 /* GET article page. */
 router.post('/stocks', function(request, response) {
