@@ -59,7 +59,7 @@ function add_stock(data) {
 	
 	
 	var buf = new Buffer(name,'binary');
-    var str = iconv.decode(buf,'gbk');
+    var str = iconv.decode(buf,'utf-8');
 	
 	console.log(id,'  ',str,'  ',abbr);
 		
