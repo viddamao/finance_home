@@ -15,7 +15,7 @@ var User = require('./models/users');
 
 var fs = require('fs');
 
-function readLines(input, func) {
+function readLines(input, add_stock) {
   var remaining = ''	//remaining input stream
   
 
