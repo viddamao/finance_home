@@ -13,6 +13,7 @@ var Stock = require('./models/stocks');
 var Article = require('./models/articles');
 var User = require('./models/users');	
 
+var stock_init = false;
 var fs = require('fs');
 
 function readLines(input, add_stock) {
@@ -72,6 +73,8 @@ function add_stock(data) {
 	});
 }
 
+
+if (stock_init==false){
 Stock.remove({}, function(err) { 
    console.log('collection removed') 
 });
@@ -84,8 +87,8 @@ var bin = fs.readFileSync('stockList_20151217.txt');
     }
 
 readLines(bin.toString('utf-8'),add_stock);
- 
- 
+stock_init=true; 
+}
 console.log("hello1");
  
 var bodyParser = require('body-parser');
