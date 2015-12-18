@@ -43,7 +43,7 @@ function readLines(input, add_stock) {
   });
 }
 
-function add_stock(data) {
+function add_stock(line) {
 	var id = '';			//stock id
 	var name = '';			//stock name
 	var abbr = '';			//stock abbr
