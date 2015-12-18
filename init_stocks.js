@@ -1,6 +1,7 @@
 
 var Stocks = require('./models/stocks');
 var fs = require('fs');
+var counter = 0;
 
 function readLines(input, add_stock) {
   var remaining = ''	//remaining input stream
@@ -28,6 +29,7 @@ function readLines(input, add_stock) {
 }
 
 function add_stock(data) {
+	counter++;
 	var id = '';			//stock id
 	var name = '';			//stock name
 	var abbr = '';			//stock abbr
@@ -75,4 +77,5 @@ var bin = fs.readFileSync('stockList_20151217.txt');
 
 readLines(bin.toString('utf-8'),add_stock);
 stock_init=true; 
+console.log(counter);
 }
