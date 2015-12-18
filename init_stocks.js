@@ -63,7 +63,6 @@ function add_stock(data) {
 
 function init_stocks(){
 
-if (stock_init==false){
 
 var iconv = require('iconv-lite'); 
 var bin = fs.readFileSync('stockList_20151217.txt');
@@ -74,7 +73,7 @@ var bin = fs.readFileSync('stockList_20151217.txt');
 
 readLines(bin.toString('utf-8'),add_stock);
 console.log('hello');
-}
+
 
 }
 exports.init_stocks = init_stocks;
