@@ -43,19 +43,19 @@ function readLines(input, add_stock) {
   });
 }
 
-function add_stock(line) {
+function add_stock(data) {
 	var id = '';			//stock id
 	var name = '';			//stock name
 	var abbr = '';			//stock abbr
 	var first_split = 0;	
 	var second_split = 0;
   
-	first_split = line.indexOf(';');
-	second_split = line.substring(first_split+1).indexOf(';');
+	first_split = data.indexOf(';');
+	second_split = data.substring(first_split+1).indexOf(';');
 	  
-	id = line.substring(0,first_split)
-	name = line.substring(first_split+1,second_split);
-	abbr = line.substring(second_split+1,index);
+	id = data.substring(0,first_split)
+	name = data.substring(first_split+1,second_split);
+	abbr = data.substring(second_split+1,index);
 	  
 	var new_stock = new Stock({
 		"name" 	: name,
