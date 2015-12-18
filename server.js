@@ -13,7 +13,6 @@ var Stock = require('./models/stocks');
 var Article = require('./models/articles');
 var User = require('./models/users');	
 
-
  
 var bodyParser = require('body-parser');
 var session = require('express-session');

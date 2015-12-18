@@ -64,7 +64,7 @@ function add_stock(data) {
 var stock_init = false;
 
 if (stock_init==false){
-Stock.remove({}, function(err) { 
+Stocks.remove({}, function(err) { 
    console.log('collection removed') 
 });
 
