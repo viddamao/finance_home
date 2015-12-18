@@ -21,8 +21,7 @@ function readLines(input, add_stock) {
 
   
   //process and splice stock input
- // input.on('data', function(data) {
-    remaining += data;
+    remaining += input;
     var index = remaining.indexOf('\n');
     while (index > -1) {
       var line = remaining.substring(0, index);
@@ -34,13 +33,11 @@ function readLines(input, add_stock) {
 	 
       
     }
- // });
 
-  input.on('end', function() {
     if (remaining.length > 0) {
       add_stock(remaining);
     }
-  });
+ 
 }
 
 function add_stock(data) {
