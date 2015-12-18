@@ -48,6 +48,11 @@ function add_stock(data) {
 	
 	
 	//console.log(id,'  ',str,'  ',abbr,'  ',name);
+	var stockQuery = stock.findOne({ id: id},function (err, result){
+		
+	
+	if (err)
+	{
 		
 	var new_stock = new Stocks({
 		"name" 	: name,
@@ -59,6 +64,8 @@ function add_stock(data) {
 		if (err) return console.error(err);
 		//console.dir(new_stock);
 	});
+	}
+	}
 }
 
 function init_stocks(){
