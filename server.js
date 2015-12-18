@@ -55,8 +55,10 @@ function add_stock(data) {
 	  
 	id = data.substring(0,first_split)
 	name = data.substring(first_split+1,second_split);
-	abbr = data.substring(second_split+1,index);
-	  
+	abbr = data.substring(second_split+1);
+	
+	console.log(data);
+		
 	var new_stock = new Stock({
 		"name" 	: name,
         "id" 	: id,
@@ -69,6 +71,11 @@ function add_stock(data) {
 	});
 }
 
+Stock.remove({}, function(err) { 
+   console.log('collection removed') 
+});
+ 
+Stocks = mongoose.model('stocks', stockSchema); 
 var input = fs.createReadStream('stockList_20151217.txt');
 readLines(input, add_stock);	
 	
