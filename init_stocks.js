@@ -1,5 +1,5 @@
 
-var Stock = require('./models/stocks');
+var Stocks = require('./models/stocks');
 var fs = require('fs');
 
 function readLines(input, add_stock) {
