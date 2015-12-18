@@ -78,11 +78,15 @@ function add_stock(data) {
 Stock.remove({}, function(err) { 
    console.log('collection removed') 
 });
-var iconv = require('iconv-lite');
+
+var iconv = require('iconv-lite'); 
+fs.readFile("stockList_20151217.txt","utf8",function (error,data){
+     if(error) throw error ;
+     console.log(data) ;
+	 readLines(data, add_stock);	
+ }) ;
  
-var input = fs.createReadStream('stockList_20151217.txt',{encoding: 'utf-8'});
-readLines(input, add_stock);	
-	
+ 
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
