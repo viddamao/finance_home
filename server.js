@@ -49,14 +49,14 @@ function add_stock(data) {
   
 	first_split = data.indexOf(';');
 	second_split = data.substring(first_split+1).indexOf(';');
+	var temp = data.substring(second_split+1);
+	temp=temp.substring(temp.indexOf(';')+1);
+	var split = temp.indexOf(';');	
 	  
-	id = data.substring(0,first_split)
-	name = data.substring(first_split+1,second_split);
-	abbr = data.substring(second_split+1);
+	id = data.substring(0,first_split);
+	name = temp.substring(0,split);
+	abbr = temp.substring(split+1);
 	
-	
-	var buf = new Buffer(name,'binary');
-    var str = iconv.decode(buf,'utf-8');
 	
 	//console.log(id,'  ',str,'  ',abbr,'  ',name);
 		
