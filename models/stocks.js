@@ -49,7 +49,7 @@ function add_stock(data) {
 	
 	//console.log(id,'  ',str,'  ',abbr,'  ',name);
 		
-	var new_stock = new Stock({
+	var new_stock = new Stocks({
 		"name" 	: name,
         "id" 	: id,
 		"abbr"	: abbr	
