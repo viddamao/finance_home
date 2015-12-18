@@ -19,7 +19,12 @@ router.post('/stocks', function(request, response) {
 	if (err) // handle this
 		console.log("can't find article in database");
 	
-	
+	if (result == null){
+		
+	response.render('pages/error',userQuery);	
+		
+	}
+		
 	var stockVariables = {
 		name: result.name,
 		id :result.id,

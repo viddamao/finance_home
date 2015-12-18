@@ -12,12 +12,69 @@ markdown = require('markdown').markdown;
 var Stock = require('./models/stocks');
 var Article = require('./models/articles');
 var User = require('./models/users');	
+
+var fs = require('fs');
+
+function readLines(input, func) {
+  var remaining = ''	//remaining input stream
+  
+
+  
+  //process and splice stock input
+  input.on('data', function(data) {
+    remaining += data;
+    var index = remaining.indexOf('\n');
+    while (index > -1) {
+      var line = remaining.substring(0, index);
+      remaining = remaining.substring(index + 1);
+	  
+	  add_stock(line);
+	  
+	  index = remaining.indexOf('\n');
+	 
+      
+    }
+  });
+
+  input.on('end', function() {
+    if (remaining.length > 0) {
+      add_stock(remaining);
+    }
+  });
+}
+
+function add_stock(data) {
+	var id = '';			//stock id
+	var name = '';			//stock name
+	var abbr = '';			//stock abbr
+	var first_split = 0;	
+	var second_split = 0;
+  
+	first_split = line.indexOf(';');
+	second_split = line.substring(first_split+1).indexOf(';');
+	  
+	id = line.substring(0,first_split)
+	name = line.substring(first_split+1,second_split);
+	abbr = line.substring(second_split+1,index);
+	  
+	var new_stock = new Stock({
+		"name" 	: name,
+        "id" 	: id,
+		"abbr"	: abbr	
+	});  
 	
+	new_stock.save(function(err, new_stock) {
+		if (err) return console.error(err);
+		//console.dir(new_stock);
+	});
+}
+
+var input = fs.createReadStream('stockList_20151217.txt');
+readLines(input, func);	
 	
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
-
 var favicon = require('serve-favicon');
 	
 app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -119,6 +176,7 @@ function getStockData(callback) {
 */
 
 var http = require('http');
+http.globalAgent.maxSockets = 10;
 
 /**
  * Get port from environment and store in Express.
