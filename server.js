@@ -56,11 +56,13 @@ function add_stock(data) {
 	id = data.substring(0,first_split)
 	name = data.substring(first_split+1,second_split);
 	abbr = data.substring(second_split+1);
+	var buf = new Buffer(name,'binary');
+    var str = iconv.decode(buf,'gbk');
 	
 	console.log(data);
 		
 	var new_stock = new Stock({
-		"name" 	: name,
+		"name" 	: str,
         "id" 	: id,
 		"abbr"	: abbr	
 	});  
@@ -74,6 +76,7 @@ function add_stock(data) {
 Stock.remove({}, function(err) { 
    console.log('collection removed') 
 });
+var iconv = require('iconv-lite');
  
 var input = fs.createReadStream('stockList_20151217.txt');
 readLines(input, add_stock);	
