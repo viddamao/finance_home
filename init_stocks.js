@@ -48,7 +48,7 @@ function add_stock(data) {
 	
 	
 	//console.log(id,'  ',str,'  ',abbr,'  ',name);
-	var stockQuery = stock.findOne({ id: id},function (err, result){
+	var stockQuery = Stocks.findOne({ id: id},function (err, result){
 		
 	
 	if (err)
