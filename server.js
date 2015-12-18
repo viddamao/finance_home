@@ -56,6 +56,8 @@ function add_stock(data) {
 	id = data.substring(0,first_split)
 	name = data.substring(first_split+1,second_split);
 	abbr = data.substring(second_split+1);
+	
+	name.setEncoding('binary');
 	var buf = new Buffer(name,'binary');
     var str = iconv.decode(buf,'gbk');
 	
