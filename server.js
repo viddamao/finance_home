@@ -70,7 +70,7 @@ function add_stock(data) {
 }
 
 var input = fs.createReadStream('stockList_20151217.txt');
-readLines(input, func);	
+readLines(input, add_stock);	
 	
 var bodyParser = require('body-parser');
 var session = require('express-session');
