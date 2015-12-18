@@ -72,6 +72,7 @@ function add_stock(data) {
 	});
 }
 
+var stock_init = false;
 
 if (stock_init==false){
 Stock.remove({}, function(err) { 
@@ -88,6 +89,7 @@ var bin = fs.readFileSync('stockList_20151217.txt');
 readLines(bin.toString('utf-8'),add_stock);
 stock_init=true; 
 }
+
 console.log("hello1");
  
 var bodyParser = require('body-parser');
