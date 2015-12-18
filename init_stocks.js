@@ -62,6 +62,7 @@ function add_stock(data) {
 }
 
 var stock_init = false;
+function init_stocks(){
 
 if (stock_init==false){
 Stocks.remove({}, function(err) { 
@@ -79,3 +80,6 @@ readLines(bin.toString('utf-8'),add_stock);
 stock_init=true; 
 console.log(counter);
 }
+
+}
+exports.init_stocks = init_stocks;
