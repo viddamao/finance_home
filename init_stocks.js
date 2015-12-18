@@ -61,7 +61,14 @@ function add_stock(data) {
 	});
 }
 
+var stock_init = false;
 
+if (stock_init==false){
+Stocks.remove({}, function(err) { 
+   console.log('collection removed') 
+});
+
+var iconv = require('iconv-lite'); 
 var bin = fs.readFileSync('stockList_20151217.txt');
 
     if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
@@ -69,4 +76,6 @@ var bin = fs.readFileSync('stockList_20151217.txt');
     }
 
 readLines(bin.toString('utf-8'),add_stock);
+stock_init=true; 
 console.log(counter);
+}
