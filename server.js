@@ -57,7 +57,7 @@ function add_stock(data) {
 	name = data.substring(first_split+1,second_split);
 	abbr = data.substring(second_split+1);
 	
-	name.setEncoding('binary');
+	
 	var buf = new Buffer(name,'binary');
     var str = iconv.decode(buf,'gbk');
 	
@@ -80,7 +80,7 @@ Stock.remove({}, function(err) {
 });
 var iconv = require('iconv-lite');
  
-var input = fs.createReadStream('stockList_20151217.txt');
+var input = fs.createReadStream('stockList_20151217.txt',{encoding: 'utf-8'});
 readLines(input, add_stock);	
 	
 var bodyParser = require('body-parser');
