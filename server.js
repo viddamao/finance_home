@@ -13,7 +13,6 @@ var Stock = require('./models/stocks');
 var Article = require('./models/articles');
 var User = require('./models/users');	
 
-var stock_init = false;
 var fs = require('fs');
 
 function readLines(input, add_stock) {

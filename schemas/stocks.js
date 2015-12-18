@@ -8,6 +8,7 @@ var stocks = new mongoose.Schema({
         id : String,
         high : Number,
 		start: Number,
+		abbr : String,
 		articles:[ObjectId]	
 	});
 
