@@ -77,11 +77,13 @@ Stock.remove({}, function(err) {
 });
 
 var iconv = require('iconv-lite'); 
-fs.readFile("stockList_20151217.txt","utf8",function (error,data){
-     if(error) throw error ;
-     console.log(data) ;
-	 readLines(data, add_stock);	
- }) ;
+var bin = fs.readFileSync('stockList_20151217.txt');
+
+    if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
+        bin = bin.slice(3);
+    }
+
+readLines(bin.toString('utf-8'),add_stock);
  
  
 console.log("hello1");
