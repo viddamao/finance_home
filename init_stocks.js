@@ -65,7 +65,7 @@ function add_stock(data) {
 		//console.dir(new_stock);
 	});
 	}
-	}
+	});
 }
 
 function init_stocks(){
