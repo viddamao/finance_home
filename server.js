@@ -58,7 +58,7 @@ function add_stock(data) {
 	var buf = new Buffer(name,'binary');
     var str = iconv.decode(buf,'utf-8');
 	
-	//console.log(id,'  ',str,'  ',abbr,'  ',name);
+	console.log(id,'  ',str,'  ',abbr,'  ',name);
 		
 	var new_stock = new Stock({
 		"name" 	: name,
@@ -79,10 +79,12 @@ Stock.remove({}, function(err) {
 var iconv = require('iconv-lite'); 
 fs.readFile("stockList_20151217.txt","utf8",function (error,data){
      if(error) throw error ;
-     console.log(data) ;
+     //console.log(data) ;
 	 readLines(data, add_stock);	
  }) ;
  
+ 
+console.log("hello");
  
 var bodyParser = require('body-parser');
 var session = require('express-session');
