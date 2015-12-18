@@ -75,7 +75,6 @@ Stock.remove({}, function(err) {
    console.log('collection removed') 
 });
  
-Stocks = mongoose.model('stocks', stockSchema); 
 var input = fs.createReadStream('stockList_20151217.txt');
 readLines(input, add_stock);	
 	
