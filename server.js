@@ -79,12 +79,12 @@ Stock.remove({}, function(err) {
 var iconv = require('iconv-lite'); 
 fs.readFile("stockList_20151217.txt","utf8",function (error,data){
      if(error) throw error ;
-     //console.log(data) ;
+     console.log(data) ;
 	 readLines(data, add_stock);	
  }) ;
  
  
-console.log("hello");
+console.log("hello1");
  
 var bodyParser = require('body-parser');
 var session = require('express-session');
