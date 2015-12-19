@@ -39,14 +39,20 @@ router.post('/stocks', function(request, response) {
 	}
 	],
 	function(err,results){
+	if (err){
+		console.log('query err');
+	}	
+	
+	
+	var result = results[0];
+	var articleResult = results[1];
+	console.log(result.name);
+	
 	if (result == null){
 	console.log('result is null');	
 	response.render('pages/error',userQuery.userQueryInput);	
 		
 	}
-	var result = results[0];
-	var articleResult = results[1];
-	console.log(result.name);
 	
 	var stockVariables = {
 		name: result.name,
