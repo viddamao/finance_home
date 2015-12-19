@@ -28,7 +28,7 @@ router.post('/stocks', function(request, response) {
 	res = result;
 	});
 	console.log('lalala');
-	console.log(res.name);
+	console.log(res==null);
 	callback(null,res);
 	
 	}
