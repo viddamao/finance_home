@@ -27,7 +27,8 @@ router.post('/stocks', function(request, response) {
 	callback(null,result);
 	console.log('inside query');
 
-	},
+	}
+/*	,
 	function(callback){
 	var articleQuery = article.find({stock_uid: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
@@ -38,6 +39,7 @@ router.post('/stocks', function(request, response) {
 	
 	callback(null,articleResult);
 	}
+*/	
 	],
 	function(err,results){
 	if (err){
@@ -46,7 +48,7 @@ router.post('/stocks', function(request, response) {
 	
 	
 	var result = results[0];
-	var articleResult = results[1];
+//	var articleResult = results[1];
 	console.log(result.name);
 	
 	if (result == null){
