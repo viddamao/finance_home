@@ -25,8 +25,9 @@ router.post('/stocks', function(request, response) {
 	}
 	
 	console.log('inside query');
-	callback(null,result);
 	});
+	console.log(result.name);
+	callback(null,result);
 	
 	}
 /*	,
