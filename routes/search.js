@@ -44,7 +44,9 @@ router.post('/stocks', function(request, response) {
 	response.render('pages/error',userQuery.userQueryInput);	
 		
 	}
-
+	var result = results.stockQuery;
+	var articleResult = results.articleQuery;
+	
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
