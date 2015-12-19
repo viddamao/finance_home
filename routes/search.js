@@ -14,11 +14,11 @@ router.post('/stocks', function(request, response) {
 	
 	if ((userQuery.userQueryInput.charCodeAt(0)>=48)&&(userQuery.userQueryInput.charCodeAt(0)<=57)){				//is id search
 		
-	
+	console.log(userQuery.userQueryInput);
 	//var userInput = localStorage.getItem("stockId");
 	async.parallel([
 	function(callback){
-	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id abbr",function (err, result) {
+	var stockQuery = stock.findOne({ 'id': userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{
 		console.log("can't find stock in database");
