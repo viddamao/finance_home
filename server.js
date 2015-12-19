@@ -15,7 +15,7 @@ var User = require('./models/users');
 
 //var init_stocks = require('./init_stocks'); 
 //init_stocks.init_stocks();
- 
+
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);	
