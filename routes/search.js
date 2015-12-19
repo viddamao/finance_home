@@ -22,7 +22,7 @@ router.post('/stocks', function(request, response) {
 	if (err) // handle this
 		console.log("can't find stock in database");
 	
-	
+	console.log('inside query');
 	
 	var articleQuery = article.find({stock_uid: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
