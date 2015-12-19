@@ -39,7 +39,7 @@ router.post('/stocks', function(request, response) {
 		id :result.id,
 		articles:articleResult
 	};
-	
+	console.log('outside query');
 	response.render('pages/stocks',stockVariables);	
 	
 	
