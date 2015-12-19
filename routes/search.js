@@ -42,7 +42,9 @@ router.post('/stocks', function(request, response) {
 	}
 */	
 	],
-	function(err,results){
+	function (err,results){
+	console.log('inside callback');
+		
 	if (err){
 		console.log('query err');
 	}	
