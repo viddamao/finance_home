@@ -10,9 +10,6 @@ router.post('/stocks', function(request, response) {
 	console.log('render stocks page');
 	var userQuery = request.body;
 	userQuery.userQueryInput = userQuery.userQueryInput.toUpperCase();
-	console.log(userQuery.userQueryInput);
-	console.log(userQuery.userQueryInput.charCodeAt(0));
-	console.log((userQuery.userQueryInput.charCodeAt(0)>=48)&&(userQuery.userQueryInput.charCodeAt(0)<=57));
 	
 	if ((userQuery.userQueryInput.charCodeAt(0)>=48)&&(userQuery.userQueryInput.charCodeAt(0)<=57)){				//is id search
 		
@@ -33,8 +30,7 @@ router.post('/stocks', function(request, response) {
 	response.render('pages/error',userQuery.userQueryInput);	
 		
 	}
-	else
-	{	
+
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
@@ -42,7 +38,7 @@ router.post('/stocks', function(request, response) {
 	};
 	
 	response.render('pages/stocks',stockVariables);	
-	}
+	
 	});
 	
 	
@@ -66,8 +62,7 @@ router.post('/stocks', function(request, response) {
 		
 	}
 	
-	else
-	{		
+	
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
@@ -76,7 +71,7 @@ router.post('/stocks', function(request, response) {
 	};
 	
 	response.render('pages/stocks',stockVariables);	
-	}
+	
 	});
 	
 	
