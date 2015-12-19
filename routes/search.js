@@ -44,7 +44,7 @@ router.post('/stocks', function(request, response) {
 	}
 	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
 	//console.log(userQuery.userQueryInput);	
-	var stockQuery = stock.where('abbr').equals(userQuery.userQueryInput).select("name id abbr").exec(function (err, result) {
+	var stockQuery = stock.findOne(abbr:userQuery.userQueryInput,'name id abbr',function (err, result) {
 	if (err) // handle this
 	{	
 		console.log("can't find stock in database");

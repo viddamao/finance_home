@@ -9,6 +9,7 @@ var articles = new mongoose.Schema({
 		author_id:{type:ObjectId, ref: 'user'},
 		stock_uid:String,
 		stock_id:{type:ObjectId, ref: 'stocks'},
+		stock_abbr:String,
 		stock_name:String,
 		title: String,
 		href:String,
