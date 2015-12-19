@@ -19,12 +19,13 @@ router.post('/stocks', function(request, response) {
 	async.parallel([
 	function(callback){
 	var res = null;
-	var stockQuery = stock.findOne({ 'id': userQuery.userQueryInput },"name id abbr",function (err, result) {
+	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{
 		callback(err);
 		console.log("can't find stock in database");
 	}
+	console.log(result.name);
 	res = result;
 	});
 	console.log('lalala');
