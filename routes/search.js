@@ -24,12 +24,12 @@ router.post('/stocks', function(request, response) {
 		console.log("can't find stock in database");
 	}
 	
-	console.log('inside query');
-	});
-	console.log(stockQuery.name);
 	console.log('lalala');
 	console.log(result.name);
 	callback(null,result);
+	console.log('inside query');
+	});
+	
 	
 	}
 /*	,
