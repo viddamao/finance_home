@@ -23,7 +23,7 @@ router.post('/stocks', function(request, response) {
 	{
 		console.log("can't find stock in database");
 	}
-	callback(null,'stockQuery');
+	callback(null,result);
 	console.log('inside query');
 	});
 	},
@@ -34,7 +34,7 @@ router.post('/stocks', function(request, response) {
 		console.log("can't find article in database");
 	}	
 	
-	callback(null,'articleQuery');
+	callback(null,articleResult);
 	});
 	}
 	],
@@ -44,8 +44,9 @@ router.post('/stocks', function(request, response) {
 	response.render('pages/error',userQuery.userQueryInput);	
 		
 	}
-	var result = results.stockQuery;
-	var articleResult = results.articleQuery;
+	var result = results[0];
+	var articleResult = results[1];
+	console.log(result.name);
 	
 	var stockVariables = {
 		name: result.name,
