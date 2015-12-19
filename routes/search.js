@@ -18,18 +18,18 @@ router.post('/stocks', function(request, response) {
 	//var userInput = localStorage.getItem("stockId");
 	async.parallel([
 	function(callback){
+	var res = null;
 	var stockQuery = stock.findOne({ 'id': userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{
+		callback(err);
 		console.log("can't find stock in database");
 	}
-	
-	console.log('lalala');
-	console.log(result.name);
-	callback(null,result);
-	console.log('inside query');
+	res = result;
 	});
-	
+	console.log('lalala');
+	console.log(res.name);
+	callback(null,res);
 	
 	}
 /*	,
