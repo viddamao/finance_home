@@ -17,7 +17,7 @@ router.post('/stocks', function(request, response) {
 	
 	//var userInput = localStorage.getItem("stockId");
 	async.parallel([
-	function(userQuery,callback){
+	function(callback){
 	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{
@@ -26,6 +26,8 @@ router.post('/stocks', function(request, response) {
 	
 	console.log('inside query');
 	});
+	console.log(stockQuery.name);
+	console.log('lalala');
 	console.log(result.name);
 	callback(null,result);
 	
