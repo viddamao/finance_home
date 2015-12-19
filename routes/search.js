@@ -17,17 +17,17 @@ router.post('/stocks', function(request, response) {
 	
 	//var userInput = localStorage.getItem("stockId");
 	async.parallel([
-	function(callback){
-	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id articles abbr",function (err, result) {
+	function(userQuery,callback){
+	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{
 		console.log("can't find stock in database");
 	}
-	});
 	
 	console.log('inside query');
 	callback(null,result);
-
+	});
+	
 	}
 /*	,
 	function(callback){
@@ -63,6 +63,7 @@ router.post('/stocks', function(request, response) {
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
+		abbr : result.abbr,
 		articles:articleResult
 	};
 	console.log('outside query');
