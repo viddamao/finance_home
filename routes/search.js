@@ -14,68 +14,33 @@ router.post('/stocks', function(request, response) {
 	
 	if ((userQuery.userQueryInput.charCodeAt(0)>=48)&&(userQuery.userQueryInput.charCodeAt(0)<=57)){				//is id search
 		
-	console.log(userQuery.userQueryInput);
-	//var userInput = localStorage.getItem("stockId");
-	async.parallel([
-	function(callback){
-	var res = null;
 	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
-	{
-		callback(err);
 		console.log("can't find stock in database");
-	}
-	console.log(result.name);
-	res = result;
-	});
-	console.log('lalala');
-	console.log(res==null);
-	callback(null,res);
 	
-	}
-/*	,
-	function(callback){
 	var articleQuery = article.find({stock_uid: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
-	{	
 		console.log("can't find article in database");
-	}	
-	});
-	
-	callback(null,articleResult);
-	}
-*/	
-	],
-	function (err,results){
-	console.log('inside callback');
-		
-	if (err){
-		console.log('query err');
-	}	
-	
-	
-	var result = results[0];
-//	var articleResult = results[1];
-	console.log(result.name);
 	
 	if (result == null){
-	console.log('result is null');	
-	response.render('pages/error',userQuery.userQueryInput);	
+		
+	response.render('pages/error',userQuery);	
 		
 	}
-	
+		
 	var stockVariables = {
 		name: result.name,
 		id :result.id,
 		abbr : result.abbr,
-		//articles:articleResult
+		articles:articleResult
 	};
-	console.log('outside query');
+	
 	response.render('pages/stocks',stockVariables);	
 	
-	}
+	});
 	
-	);
+	
+	});
 	}
 	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
 		
