@@ -23,9 +23,10 @@ router.post('/stocks', function(request, response) {
 	{
 		console.log("can't find stock in database");
 	}
+	});
 	callback(null,result);
 	console.log('inside query');
-	});
+
 	},
 	function(callback){
 	var articleQuery = article.find({stock_uid: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
@@ -33,9 +34,9 @@ router.post('/stocks', function(request, response) {
 	{	
 		console.log("can't find article in database");
 	}	
+	});
 	
 	callback(null,articleResult);
-	});
 	}
 	],
 	function(err,results){
