@@ -29,7 +29,7 @@ router.post('/stocks', function(request, response) {
 		console.log("can't find article in database");
 	
 	if (result == null){
-		
+	console.log('result is null');	
 	response.render('pages/error',userQuery.userQueryInput);	
 		
 	}
