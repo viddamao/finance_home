@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var async = require('async');
 
 //import models
 var stock = require('../models/stocks');
@@ -15,19 +16,29 @@ router.post('/stocks', function(request, response) {
 		
 	
 	//var userInput = localStorage.getItem("stockId");
+	async.parallel([
+	function(callback){
 	var stockQuery = stock.findOne({ id: userQuery.userQueryInput },"name id articles abbr",function (err, result) {
 	if (err) // handle this
+	{
 		console.log("can't find stock in database");
-	
+	}
+	callback(null,'stockQuery');
 	console.log('inside query');
 	});
+	},
+	function(callback){
 	var articleQuery = article.find({stock_uid: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
+	{	
 		console.log("can't find article in database");
+	}	
 	
-	
+	callback(null,'articleQuery');
 	});
-	
+	}
+	],
+	function(err,results){
 	if (result == null){
 	console.log('result is null');	
 	response.render('pages/error',userQuery.userQueryInput);	
@@ -42,20 +53,24 @@ router.post('/stocks', function(request, response) {
 	console.log('outside query');
 	response.render('pages/stocks',stockVariables);	
 	
+	}
 	
-	
+	);
 	}
 	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
 		
 	var stockQuery = stock.findOne({ abbr: userQuery.userQueryInput },"name id articles abbr",function (err, result) {
 	if (err) // handle this
+	{	
 		console.log("can't find stock in database");
-	
+	}
 	});
 	
 	var articleQuery = article.find({stock_abbr: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
+	{
 		console.log("can't find article in database");
+	}
 	});
 	if (result == null){
 		
