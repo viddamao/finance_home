@@ -44,19 +44,17 @@ router.post('/stocks', function(request, response) {
 	}
 	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
 		
-	var stockQuery = stock.findOne({ abbr: userQuery.userQueryInput },"name id articles abbr",function (err, result) {
+	var stockQuery = stock.findOne({ abbr: userQuery.userQueryInput },"name id abbr",function (err, result) {
 	if (err) // handle this
 	{	
 		console.log("can't find stock in database");
 	}
-	});
 	
 	var articleQuery = article.find({stock_abbr: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
 	{
 		console.log("can't find article in database");
 	}
-	});
 	if (result == null){
 		
 	response.render('pages/error',userQuery.userQueryInput);	
@@ -73,6 +71,8 @@ router.post('/stocks', function(request, response) {
 	
 	response.render('pages/stocks',stockVariables);	
 	
+	 });
+	});
 	}
 	else{
 		response.render('pages/error',userQuery.userQueryInput);	
