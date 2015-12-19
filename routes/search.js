@@ -14,7 +14,7 @@ router.post('/stocks', function(request, response) {
 	console.log(userQuery.userQueryInput.charCodeAt(0));
 	
 	
-	if ((userQuery.userQueryInput.charCodeAt(0)>=48)&(userQuery.userQueryInput.charCodeAt(0)<=57)){				//is id search
+	if ((userQuery.userQueryInput.charCodeAt(0)>=48)&&(userQuery.userQueryInput.charCodeAt(0)<=57)){				//is id search
 		
 	
 	//var userInput = localStorage.getItem("stockId");
@@ -48,7 +48,7 @@ router.post('/stocks', function(request, response) {
 	
 	});
 	}
-	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
+	else if ((userQuery.userQueryInput.charCodeAt(0)>=65)&&(userQuery.userQueryInput.charCodeAt(0)<=90)){		//is abbr search
 		
 	var stockQuery = stock.findOne({ abbr: userQuery.userQueryInput },"name id articles abbr",function (err, result) {
 	if (err) // handle this
