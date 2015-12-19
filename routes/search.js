@@ -50,6 +50,14 @@ router.post('/stocks', function(request, response) {
 		console.log("can't find stock in database");
 	}
 	
+	console.log(result.name);
+	console.log(result.id);
+	var stockVariables = {
+		name: result.name,
+		id :result.id,
+		abbr : userQuery.userQueryInput
+	};
+	
 	var articleQuery = article.find({stock_abbr: userQuery.userQueryInput},"author_name title href date likes",function (err, articleResult) {
 	if (err) // handle this
 	{
@@ -62,16 +70,8 @@ router.post('/stocks', function(request, response) {
 		
 	}
 	
-	console.log(result.name);
-	console.log(result.id);
+	stockVariables.articles=articleResult;
 	
-	
-	var stockVariables = {
-		name: result.name,
-		id :result.id,
-		abbr : userQuery.userQueryInput,
-		articles:articleResult
-	};
 	
 	response.render('pages/stocks',stockVariables);	
 	
