@@ -24,8 +24,9 @@ router.post('/stocks', function(request, response) {
 		console.log("can't find stock in database");
 	}
 	});
-	callback(null,result);
+	
 	console.log('inside query');
+	callback(null,result);
 
 	}
 /*	,
