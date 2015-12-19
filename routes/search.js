@@ -63,9 +63,10 @@ router.post('/stocks', function(request, response) {
 	}
 	
 	
+	
 	var stockVariables = {
-		name: result.name,
-		id :result.id,
+		name: stockQuery.name,
+		id :stockQuery.id,
 		abbr : userQuery.userQueryInput,
 		articles:articleResult
 	};
