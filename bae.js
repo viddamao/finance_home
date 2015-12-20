@@ -23,13 +23,14 @@ var redis_host = 'redis.duapp.com';
 var redis_port = 80;
 var redis_database = "RpiDsahJtJQAAtlhcHvX" ;
 var options = {"no_ready_check":true};
-var client = redis.createClient(redis_port, redis_host, options);
   
 
 function testRedis(req, res) {
   client.on("error", function (err) {
     console.log("Error " + err);
   });
+
+  var client = redis.createClient(redis_port, redis_host, options);
   
   client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
