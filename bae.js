@@ -28,7 +28,7 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
 }
  
 
-/*
+
 function testRedis(req, res) {
   client.on("error", function (err) {
     console.log("Error " + err);
@@ -48,6 +48,7 @@ function testRedis(req, res) {
     }
     console.log('result: ' + result);      
   }); 
+   client.end();	
 }
 
 function putRedis(key,value){
@@ -55,7 +56,8 @@ function putRedis(key,value){
   
 	client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
-	client.set(key,value);	
+	client.set(key,value);
+	client.end();
 }
 
 function getRedis(key){
@@ -71,8 +73,9 @@ function getRedis(key){
     }
     return result;      
   }); 
+	client.end();
 }
- */
+ 
 var recon =true;  
 function getConnect(){  
 	var opts ={  
@@ -121,7 +124,8 @@ function getConnect(){
 		console.log('reConnect-end');  
 	}	  
 }  
-   
+
+exports.testRedis = testRedis;
 //exports.putRedis = putRedis;
 //exports.getRedis = getRedis;
    
