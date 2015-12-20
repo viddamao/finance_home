@@ -50,7 +50,7 @@ function testRedis(req, res) {
     }
     res.end('result:'+result );      
   }); 
-  console.log('result :'testout);
+  console.log('result :'+testout);
    client.end();	
 }
 
