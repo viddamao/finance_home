@@ -49,6 +49,7 @@ function testRedis(req, res) {
   }); 
 }
 
+/*
 function putRedis(key,value){
 	var client = redis.createClient(redis_port, redis_host, options);
   
@@ -71,7 +72,7 @@ function getRedis(key){
     return result;      
   }); 
 }
- 
+ */
 var recon =true;  
 function getConnect(){  
 	var opts ={  
