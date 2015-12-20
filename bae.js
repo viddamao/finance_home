@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var redis = require('redis');
+
 var host,port,username,password,database,url;
 
 if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
@@ -15,7 +17,49 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
     url = "mongodb://127.0.0.1:8080/finance_home";
 }
  
-   
+var redis_username = "9100bd6357d945a9ac962a65957c2a53";
+var redis_password = "e4e1e426f9154811be0e75e76efe343c";
+var redis_host = 'redis.duapp.com';
+var redis_port = 80;
+var redis_database = "RpiDsahJtJQAAtlhcHvX" ;
+var options = {"no_ready_check":true};
+var client = redis.createClient(redis_port, redis_host, options);
+  
+
+function testRedis(req, res) {
+  client.on("error", function (err) {
+    console.log("Error " + err);
+  });
+  
+  client.auth(redis_username + '-' + redis_password + '-' + redis_database);
+ 
+  client.set('baidu', 'welcome to BAE');
+ 
+  client.get('baidu', function(err, result) {
+    if (err) {
+      console.log(err);
+      res.end('get redis error');
+      return;
+    }
+    console.log('result: ' + result);      
+  }); 
+}
+
+function putRedis(key,value){
+	client.set(key,value);	
+}
+
+function getRedis(key){
+	client.get(key, function(err, result) {
+    if (err) {
+      console.log(err);
+      res.end('get redis error');
+      return;
+    }
+    return result;      
+  }); 
+}
+ 
 var recon =true;  
 function getConnect(){  
 	var opts ={  
@@ -64,6 +108,9 @@ function getConnect(){
 		console.log('reConnect-end');  
 	}	  
 }  
+   
+exports.putRedis = putRedis;
+exports.getRedis = getRedis;
    
 exports.getConnect = getConnect;//包含到module.exports对象中,  
 // 如果module.exports中包含属性或方法则export.XX将被忽略  

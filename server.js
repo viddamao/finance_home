@@ -5,6 +5,7 @@ var app = express();
 //import mongoose module
 var bae = require('./bae');
 bae.getConnect();
+bae.testRedis();
 
 markdown = require('markdown').markdown;
 
@@ -15,6 +16,9 @@ var User = require('./models/users');
 
 //var init_stocks = require('./init_stocks'); 
 //init_stocks.init_stocks();
+
+var init_suggestions = require('./init_suggestions');
+//init_suggestions.init();
 
 var bodyParser = require('body-parser');
 var session = require('express-session');
