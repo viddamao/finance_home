@@ -5,7 +5,7 @@ var app = express();
 //import mongoose module
 var bae = require('./bae');
 bae.getConnect();
-bae.testRedis();
+//bae.testRedis();
 
 markdown = require('markdown').markdown;
 
