@@ -49,9 +49,9 @@ function testRedis(req, res) {
       res.end('get redis error');
       return;
     }
-    testout = result ;      
+    console.log(result);      
   }); 
-  console.log('result :'+testout);
+ // console.log('result :'+testout);
    client.end();	
 }
 
