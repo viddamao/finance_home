@@ -45,7 +45,6 @@ function testRedis(req, res) {
   client.get('baidu', function(err, result) {
     if (err) {
       console.log('get redis error');
-      res.end('get redis error');
       return;
     }
     console.log(result);      
@@ -70,7 +69,6 @@ function getRedis(key){
 	var ret = client.get(key, function(err, result) {
     if (err) {
       console.log(err);
-      res.end('get redis error');
       return;
     }      
 	console.log(result);
