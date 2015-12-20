@@ -10,6 +10,16 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
     database = 'VhpiFanakhuHdTjVHxMd';
     port = 8908;
     url ="mongodb://"+ username +":"+ password +"@"+ host +":"+ port +"/"+ database;  
+
+	
+	var redis_username = "9100bd6357d945a9ac962a65957c2a53";
+	var redis_password = "e4e1e426f9154811be0e75e76efe343c";
+	var redis_host = 'redis.duapp.com';
+	var redis_port = 80;
+	var redis_database = "RpiDsahJtJQAAtlhcHvX" ;
+	var options = {"no_ready_check":true};
+  
+		
 } else {
     host = '127.0.0.1';
     database = 'finance_home';
@@ -17,13 +27,6 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
     url = "mongodb://127.0.0.1:8080/finance_home";
 }
  
-var redis_username = "9100bd6357d945a9ac962a65957c2a53";
-var redis_password = "e4e1e426f9154811be0e75e76efe343c";
-var redis_host = 'redis.duapp.com';
-var redis_port = 80;
-var redis_database = "RpiDsahJtJQAAtlhcHvX" ;
-var options = {"no_ready_check":true};
-  
 
 function testRedis(req, res) {
   client.on("error", function (err) {
@@ -47,10 +50,18 @@ function testRedis(req, res) {
 }
 
 function putRedis(key,value){
+	var client = redis.createClient(redis_port, redis_host, options);
+  
+	client.auth(redis_username + '-' + redis_password + '-' + redis_database);
+ 
 	client.set(key,value);	
 }
 
 function getRedis(key){
+	var client = redis.createClient(redis_port, redis_host, options);
+  
+    client.auth(redis_username + '-' + redis_password + '-' + redis_database);
+ 
 	client.get(key, function(err, result) {
     if (err) {
       console.log(err);
@@ -110,8 +121,8 @@ function getConnect(){
 	}	  
 }  
    
-exports.putRedis = putRedis;
-exports.getRedis = getRedis;
+//exports.putRedis = putRedis;
+//exports.getRedis = getRedis;
    
 exports.getConnect = getConnect;//包含到module.exports对象中,  
 // 如果module.exports中包含属性或方法则export.XX将被忽略  
