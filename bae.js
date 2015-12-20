@@ -43,10 +43,6 @@ function testRedis(req, res) {
   client.set('baidu', 'welcome to BAE');
  
   client.get('baidu', function(err, result) {
-    if (err) {
-      console.log('get redis error');
-      return;
-    }
     console.log(result);      
   }); 
    client.quit();	
@@ -67,11 +63,7 @@ function getRedis(key){
     client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
 	var ret = client.get(key, function(err, result) {
-    if (err) {
-      console.log(err);
-      return;
-    }      
-	console.log(result);
+    console.log(result);
   }); 
 	client.quit();
 	return ret;
