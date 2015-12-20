@@ -45,8 +45,9 @@ function testRedis(req, res) {
   client.get('baidu', function(err, result) {
     console.log(result);      
   }); 
-   client.quit();	
-}
+
+ console.log("lalala"); 
+ }
 
 function putRedis(key,value){
 	var client = redis.createClient(redis_port, redis_host, options);
@@ -54,7 +55,7 @@ function putRedis(key,value){
 	client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
 	client.set(key,value);
-	client.quit();
+
 }
 
 function getRedis(key){
@@ -65,7 +66,6 @@ function getRedis(key){
 	var ret = client.get(key, function(err, result) {
     console.log(result);
   }); 
-	client.quit();
 	return ret;
 }
  
