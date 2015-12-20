@@ -42,14 +42,15 @@ function testRedis(req, res) {
  
   client.set('baidu', 'welcome to BAE');
  
-  client.get('baidu', function(err, result) {
+  var testout = client.get('baidu', function(err, result) {
     if (err) {
       console.log(err);
       res.end('get redis error');
       return;
     }
-    console.log('result: ' + result);      
+          
   }); 
+  console.log(testout);
    client.end();	
 }
 
@@ -67,15 +68,15 @@ function getRedis(key){
   
     client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
-	client.get(key, function(err, result) {
+	var ret = client.get(key, function(err, result) {
     if (err) {
       console.log(err);
       res.end('get redis error');
       return;
-    }
-    return result;      
+    }      
   }); 
 	client.end();
+	return ret;
 }
  
 var recon =true;  
