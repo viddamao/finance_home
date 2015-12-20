@@ -14,10 +14,10 @@ var Stock = require('./models/stocks');
 var Article = require('./models/articles');
 var User = require('./models/users');	
 
-//var init_stocks = require('./init_stocks'); 
+//var init_stocks = require('./routes/init_stocks'); 
 //init_stocks.init_stocks();
 
-var init_suggestions = require('./init_suggestions');
+//var init_suggestions = require('./routes/init_suggestions');
 //init_suggestions.init();
 
 var bodyParser = require('body-parser');
