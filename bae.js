@@ -30,11 +30,13 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
 
 
 function testRedis(req, res) {
+  var client = redis.createClient(redis_port, redis_host, options);
+  
+  
   client.on("error", function (err) {
     console.log("Error " + err);
   });
 
-  var client = redis.createClient(redis_port, redis_host, options);
   
   client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
