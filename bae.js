@@ -28,6 +28,7 @@ if (process.env.SERVER_SOFTWARE == 'bae/3.0') {
 }
  
 
+/*
 function testRedis(req, res) {
   client.on("error", function (err) {
     console.log("Error " + err);
@@ -49,7 +50,6 @@ function testRedis(req, res) {
   }); 
 }
 
-/*
 function putRedis(key,value){
 	var client = redis.createClient(redis_port, redis_host, options);
   
