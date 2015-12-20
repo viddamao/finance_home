@@ -48,7 +48,7 @@ function testRedis(req, res) {
       res.end('get redis error');
       return;
     }
-          
+    res.end('result:'+result );      
   }); 
   console.log(testout);
    client.end();	
