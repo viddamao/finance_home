@@ -46,7 +46,6 @@ function testRedis(req, res) {
     console.log(result);      
   }); 
 
- console.log("lalala"); 
  }
 
 function putRedis(key,value){
