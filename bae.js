@@ -43,16 +43,9 @@ function testRedis(req, res) {
   client.set('baidu', 'welcome to BAE');
  
   var testout = '';
-  client.get('baidu', function(err, result) {
-    if (err) {
-      console.log(err);
-      res.end('get redis error');
-      return;
-    }
-    console.log(result);      
-  }); 
+  client.get('baidu',redis.print); 
  // console.log('result :'+testout);
-   client.end();	
+   client.quit();	
 }
 
 function putRedis(key,value){
@@ -61,7 +54,7 @@ function putRedis(key,value){
 	client.auth(redis_username + '-' + redis_password + '-' + redis_database);
  
 	client.set(key,value);
-	client.end();
+	client.quit();
 }
 
 function getRedis(key){
@@ -76,7 +69,7 @@ function getRedis(key){
       return;
     }      
   }); 
-	client.end();
+	client.quit();
 	return ret;
 }
  
