@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto'),
     User = require('../models/user.js')；
-
+var app = express();
+	
 app.get('/signup', checkNotLogin);
   app.get('/signup', function (req, res) {
     res.render('signup', {
