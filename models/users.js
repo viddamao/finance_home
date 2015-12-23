@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var userSchema = require('../schemas/users');
 var Users = mongoose.model('user', userSchema);
-var bae = require('./bae');
+var bae = require('../bae');
 
 
 function Users(user) {
