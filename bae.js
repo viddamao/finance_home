@@ -117,6 +117,8 @@ function getConnect(){
 	}	  
 }  
 
+
+
 exports.testRedis = testRedis;
 //exports.putRedis = putRedis;
 //exports.getRedis = getRedis;
