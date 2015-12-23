@@ -49,7 +49,7 @@ Users.get = function(name, callback) {
 		return callback(err);
 	}
 	callback(null, user);//成功！返回查询的用户信息
-	}
+	});
 });
 }
 
