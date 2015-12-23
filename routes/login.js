@@ -59,5 +59,5 @@ app.get('/logout', checkLogin);
     }
     next();
   }
-} 
+ 
 
