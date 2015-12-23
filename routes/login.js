@@ -60,5 +60,5 @@ app.get('/logout', checkLogin);
     }
     next();
   }
-}; 
+} 
 module.exports = router;
