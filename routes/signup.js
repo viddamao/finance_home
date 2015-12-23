@@ -15,7 +15,7 @@ app.get('/signup', checkNotLogin);
 
   app.post('/signup', checkNotLogin);
   app.post('/signup', function (req, res) {
-    var name = req.body.name,
+    var email = req.body.email,
         password = req.body.password,
         password_re = req.body['password-repeat'];
     //检验用户两次输入的密码是否一致
@@ -27,12 +27,12 @@ app.get('/signup', checkNotLogin);
     var md5 = crypto.createHash('md5'),
         password = md5.update(req.body.password).digest('hex');
     var newUser = new User({
-        name: req.body.name,
+        email: req.body.email,
         password: password,
         email: req.body.email
     });
     //检查用户名是否已经存在 
-    User.get(newUser.name, function (err, user) {
+    User.get(newUser.email, function (err, user) {
       if (user) {
         req.flash('error', '用户已存在!');
         return res.redirect('/signup');//返回注册页
