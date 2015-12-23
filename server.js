@@ -78,8 +78,8 @@ app.use('/', about);
 app.use('/', news);
 app.use('/', articles);
 app.use('/', search);
-app.use('/', login);
-app.use('/', signup);
+//app.use('/', login);
+//app.use('/', signup);
 
 
 
