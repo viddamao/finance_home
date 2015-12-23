@@ -78,6 +78,10 @@ app.use('/', about);
 app.use('/', news);
 app.use('/', articles);
 app.use('/', search);
+app.use('/', login);
+app.use('/', signup);
+
+
 
 
 // catch 404 and forward to error handler
