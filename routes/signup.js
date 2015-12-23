@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto'),
-    User = require('../models/user.js');
+    Users = require('../models/users.js');
 var app = express();
 	
 app.get('/signup', checkNotLogin);
@@ -33,7 +33,7 @@ app.get('/signup', checkNotLogin);
         email: req.body.email
     });
     //检查用户名是否已经存在 
-    User.get(newUser.email, function (err, user) {
+    Users.get(newUser.email, function (err, user) {
       if (user) {
         req.flash('error', '用户已存在!');
         return res.redirect('/signup');//返回注册页

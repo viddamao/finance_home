@@ -8,7 +8,8 @@ var users = new mongoose.Schema({
 		family_name: String,
 		gender: String,
 		given_name: String,
-		id: String
+		id: String,
+		avatar: String
 	});
 
 

@@ -1,7 +1,7 @@
 var express = require('express'),
 	router = express.Router(),
 	crypto = require('crypto'),
-    User = require('../models/user.js');
+    Users = require('../models/users.js');
 var app = express();
 
 app.get('/login', checkNotLogin);
@@ -20,7 +20,7 @@ app.get('/login', checkNotLogin);
     var md5 = crypto.createHash('md5'),
         password = md5.update(req.body.password).digest('hex');
     //检查用户是否存在
-    User.get(req.body.email, function (err, user) {
+    Users.get(req.body.email, function (err, user) {
       if (!user) {
         req.flash('error', '用户不存在!'); 
         return res.redirect('/login');//用户不存在则跳转到登录页
