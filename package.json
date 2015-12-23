@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "ejs": "~2.3.3",
+	"mongodb": "~1.4.15",
     "express": "~4.13.3",
 	"mongoose": "~4.1.10",
 	"moment": "~2.9.0",
