@@ -2,7 +2,6 @@ var express = require('express'),
 	router = express.Router(),
 	crypto = require('crypto'),
     User = require('../models/user.js');
-var express = require('express');
 var app = express();
 
 app.get('/login', checkNotLogin);
@@ -61,4 +60,4 @@ app.get('/logout', checkLogin);
     next();
   }
 } 
-module.exports = router;
+
