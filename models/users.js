@@ -42,7 +42,7 @@ Users.get = function(name, callback) {
  var dbcon = mongoose.connection; 
  dbcon.on('open',function () {
     
-	Users.findOne()({ email:this.email },"name email password",function (err, user) {
+	Users.findOne({ email:this.email },"name email password",function (err, user) {
 	if (err) // handle this
 	{
 		console.log("can't find stock in database");
@@ -51,6 +51,6 @@ Users.get = function(name, callback) {
 	callback(null, user);//成功！返回查询的用户信息
 	}
 });
-
+}
 
 module.exports = Users;
