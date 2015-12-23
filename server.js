@@ -69,8 +69,8 @@ var about = require('./routes/about');
 var articles = require('./routes/articles');
 var news = require('./routes/news');
 var search = require('./routes/search');
-//var login = require('./routes/login');
-//var signup = require('./routes/signup');
+var login = require('./routes/login');
+var signup = require('./routes/signup');
 
 
 app.use('/', index);
@@ -78,8 +78,8 @@ app.use('/', about);
 app.use('/', news);
 app.use('/', articles);
 app.use('/', search);
-//app.use('/', login);
-//app.use('/', signup);
+app.use('/', login);
+app.use('/', signup);
 
 
 
