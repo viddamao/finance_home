@@ -1,6 +1,0 @@
-{
-  "name": "Finance home",
-  "description": "A stock marketing BBS",
-  "repository": "https://github.com/viddamao/finance_home",
-  "keywords": ["node", "express", "static"],
-}
