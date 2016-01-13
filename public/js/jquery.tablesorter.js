@@ -96,11 +96,7 @@ $("#mainTable").tablesorter({
     sortList: [
         [0, 0],
         [1, 0],
-        [2, 0],
-		[3, 0],
-        [4, 0],
-        [5, 0],
-		[6, 0]
+        [2, 0]
 		
     ],
     // default sort that is added to the end of the users sort
@@ -134,6 +130,9 @@ $("#mainTable").tablesorter({
             return $(node).text();
         },
         1: function (node) {
+            return $(node).text();
+        },
+		2: function (node) {
             return $(node).text();
         }
     },
