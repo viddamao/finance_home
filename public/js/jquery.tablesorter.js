@@ -149,7 +149,7 @@ $("#mainTable").tablesorter({
     // 'columns', 'filter', 'stickyHeaders' & 'resizable'
     // 'uitheme' is another widget, but requires loading
     // a different skin and a jQuery UI theme.
-    widgets: ['zebra', 'columns','filter'],
+    widgets: ['zebra', 'columns','filter','pager'],
 
     widgetOptions: {
 
@@ -247,7 +247,87 @@ $("#mainTable").tablesorter({
 
         // stickyHeaders widget: css class name applied to the sticky header
         stickyHeaders: "tablesorter-stickyHeader"
+		
+		
+		// output default: '{page}/{totalPages}'
+        // possible variables: {size}, {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+        // also {page:input} & {startRow:input} will add a modifiable input in place of the value
+        pager_output: '{startRow:input} to {endRow} of {totalRows} rows', // '{page}/{totalPages}'
 
+        // apply disabled classname to the pager arrows when the rows at either extreme is visible
+        pager_updateArrows: true,
+
+        // starting page of the pager (zero based index)
+        pager_startPage: 1,
+
+        // Number of visible rows
+        pager_size: 10,
+
+        // Save pager page & size if the storage script is loaded (requires $.tablesorter.storage in jquery.tablesorter.widgets.js)
+        pager_savePages: true,
+
+        // if true, the table will remain the same height no matter how many records are displayed. The space is made up by an empty
+        // table row set to a height to compensate; default is false
+        pager_fixedHeight: true,
+
+        // remove rows from the table to speed up the sort of large tables.
+        // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+        pager_removeRows: false, // removing rows in larger tables speeds up the sort
+
+        // use this format: "http://mydatabase.com?page={page}&size={size}&{sortList:col}&{filterList:fcol}"
+        // where {page} is replaced by the page number, {size} is replaced by the number of records to show,
+        // {sortList:col} adds the sortList to the url into a "col" array, and {filterList:fcol} adds
+        // the filterList to the url into an "fcol" array.
+        // So a sortList = [[2,0],[3,0]] becomes "&col[2]=0&col[3]=0" in the url
+        // and a filterList = [[2,Blue],[3,13]] becomes "&fcol[2]=Blue&fcol[3]=13" in the url
+        pager_ajaxUrl: null,
+
+        // modify the url after all processing has been applied
+        pager_customAjaxUrl: function(table, url) { return url; },
+
+        // ajax error callback from $.tablesorter.showError function
+        // pager_ajaxError: function( config, xhr, settings, exception ){ return exception; };
+        // returning false will abort the error message
+        pager_ajaxError: null,
+
+        // modify the $.ajax object to allow complete control over your ajax requests
+        pager_ajaxObject: {
+          dataType: 'json'
+        },
+
+        // process ajax so that the following information is returned:
+        // [ total_rows (number), rows (array of arrays), headers (array; optional) ]
+        // example:
+        // [
+        //   100,  // total rows
+        //   [
+        //     [ "row1cell1", "row1cell2", ... "row1cellN" ],
+        //     [ "row2cell1", "row2cell2", ... "row2cellN" ],
+        //     ...
+        //     [ "rowNcell1", "rowNcell2", ... "rowNcellN" ]
+        //   ],
+        //   [ "header1", "header2", ... "headerN" ] // optional
+        // ]
+        pager_ajaxProcessing: function(ajax){ return [ 0, [], null ]; },
+
+        // css class names that are added
+        pager_css: {
+          container   : 'tablesorter-pager',    // class added to make included pager.css file work
+          errorRow    : 'tablesorter-errorRow', // error information row (don't include period at beginning); styled in theme file
+          disabled    : 'disabled'              // class added to arrows @ extremes (i.e. prev/first arrows "disabled" on first page)
+        },
+
+        // jQuery selectors
+        pager_selectors: {
+          container   : '.pager',       // target the pager markup (wrapper)
+          first       : '.first',       // go to first page arrow
+          prev        : '.prev',        // previous page arrow
+          next        : '.next',        // next page arrow
+          last        : '.last',        // go to last page arrow
+          gotoPage    : '.gotoPage',    // go to page selector - select dropdown that sets the current page
+          pageDisplay : '.pagedisplay', // location of where the "output" is displayed
+          pageSize    : '.pagesize'     // page size selector - select dropdown that sets the "size" option
+        }
     },
 
     // *** CALLBACKS ***
