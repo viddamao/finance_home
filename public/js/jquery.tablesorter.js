@@ -19,7 +19,7 @@ $("#mainTable").tablesorter({
 
     // header layout template (HTML ok); {content} = innerHTML,
     // {icon} = <i/> (class from cssIcon)
-    headerTemplate: '{content}',
+    headerTemplate: '{content}{icon}',
 
     // return the modified template string
     onRenderTemplate: null, // function(index, template){ return template; },
