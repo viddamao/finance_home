@@ -46,23 +46,7 @@
 	
 	</tr>
   </thead>
-   <tfoot>
-    <tr>
-      <td class="pager" colspan="7">
-        <img src="/first.png" class="first"/>
-        <img src="/prev.png" class="prev"/>
-        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-        <img src="/next.png" class="next"/>
-        <img src="/last.png" class="last"/>
-        <select class="pagesize">
-          <option selected="selected"  value="20">20</option>
-		  <option value="50">50</option>
-		  <option value="100">100</option>
-		  
-        </select>
-      </td>
-    </tr>
-  </tfoot>
+  
   <tbody>
     <tr><td>Student01</td><td>Languages</td><td>male</td><td>80</td><td>70</td><td>75</td><td>80</td></tr>
     <tr><td>Student02</td><td>Mathematics</td><td>male</td><td>90</td><td>88</td><td>100</td><td>90</td></tr>
@@ -117,7 +101,21 @@
   </tbody>
 </table>
 
-
+<div id="pager" class="pager">
+  <form>
+    <img src="first.png" class="first"/>
+    <img src="prev.png" class="prev"/>
+    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+    <img src="next.png" class="next"/>
+    <img src="last.png" class="last"/>
+    <select class="pagesize">
+      <option selected = "selected" value="20">20</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="all">All</option>
+    </select>
+  </form>
+</div>
 
 </body>
 </html>
