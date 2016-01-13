@@ -1,3 +1,7 @@
+.navbar{
+	position: fixed;
+}
+
 .jumbotron {
   background: black;
   color: white;
