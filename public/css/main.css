@@ -48,6 +48,3 @@ table {
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
 }
-.tablesorter-headerDesc .roundedCorners {
-  border-color: #fff;
-}
