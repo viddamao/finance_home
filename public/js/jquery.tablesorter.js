@@ -162,13 +162,7 @@ $("#mainTable").tablesorter({
             "ui-widget-content even",
             "ui-state-default odd"],
 
-        // uitheme widget: * Updated! in tablesorter v2.4 **
-        // Instead of the array of icon class names, this option now
-        // contains the name of the theme. Currently jQuery UI ("jui")
-        // and Bootstrap ("bootstrap") themes are supported. To modify
-        // the class names used, extend from the themes variable
-        // look for the "$.extend($.tablesorter.themes.jui" code below
-        uitheme: 'jui',
+       
 
         // columns widget: change the default column class names
         // primary is the 1st column sorted, secondary is the 2nd, etc
