@@ -1,3 +1,4 @@
+$(function() {
 $('table').tablesorter({
 
     // *** APPEARANCE ***
@@ -299,4 +300,7 @@ $.extend($.tablesorter.themes.jui, {
     filterRow: '',
     even: 'ui-widget-content', // even row zebra striping
     odd: 'ui-state-default' // odd row zebra striping
+});
+
+
 });
