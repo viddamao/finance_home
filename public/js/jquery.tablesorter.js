@@ -428,7 +428,17 @@ $("#mainTable").tablesorter({
 
 
 $table.tablesorterPager(pagerOptions); 
-
+// bind to pager events
+    // *********************
+    .bind('pagerChange pagerComplete pagerInitialized pageMoved', function(e, c){
+      var p = c.pager, // NEW with the widget... it returns config, instead of config.pager
+        msg = '"</span> event triggered, ' + (e.type === 'pagerChange' ? 'going to' : 'now on') +
+        ' page <span class="typ">' + (p.page + 1) + '/' + p.totalPages + '</span>';
+      $('#display')
+        .append('<li><span class="str">"' + e.type + msg + '</li>')
+        .find('li:first').remove();
+    })
+	
 // Extend the themes to change any of the default class names ** NEW **
 $.extend($.tablesorter.themes.jui, {
     // change default jQuery uitheme icons - find the full list of icons
