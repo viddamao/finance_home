@@ -1,5 +1,5 @@
 $(function() {
-$('.maintable').tablesorter({
+$(".maintable").tablesorter({
 
     // *** APPEARANCE ***
     // Add a theme - try 'blackice', 'blue', 'dark', 'default'
@@ -7,7 +7,7 @@ $('.maintable').tablesorter({
     // to use 'bootstrap' or 'jui', you'll need to add the "uitheme"
     // widget and also set it to the same name
     // this option only adds a table class name "tablesorter-{theme}"
-    theme: 'black-ice',
+    theme: 'blackice',
 
     // fix the column widths
     widthFixed: false,
