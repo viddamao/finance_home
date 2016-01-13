@@ -311,8 +311,8 @@ $("#mainTable").tablesorter({
     // starting page of the pager (zero based index)
     page: 0,
 
-    // Number of visible rows - default is 20
-    size: 20,
+    // Number of visible rows - default is 10
+    size: 10,
 
     // if true, the table will remain the same height no matter how many
     // records are displayed. The space is made up by an empty 
