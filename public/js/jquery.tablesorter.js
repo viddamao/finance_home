@@ -1,5 +1,5 @@
 $(function() {
-$(".maintable").tablesorter({
+$("#mainTable").tablesorter({
 
     // *** APPEARANCE ***
     // Add a theme - try 'blackice', 'blue', 'dark', 'default'
