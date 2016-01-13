@@ -89,12 +89,12 @@ app.use("*",function(req, res, next) {
 // production error handler
 // no stacktraces leaked to user
 
-
+/*
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('./pages/error');
 });
-
+*/
 
 
 var http = require('http');
