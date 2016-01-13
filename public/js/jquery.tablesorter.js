@@ -8,7 +8,7 @@ $("#mainTable").tablesorter({
     // to use 'bootstrap' or 'jui', you'll need to add the "uitheme"
     // widget and also set it to the same name
     // this option only adds a table class name "tablesorter-{theme}"
-    theme: 'jui',
+    theme: 'blackice',
 
     // fix the column widths
     widthFixed: false,
