@@ -10,15 +10,12 @@ bae.testRedis();
 markdown = require('markdown').markdown;
 
 //import models
-var Stock = require('./models/stocks');
-var Article = require('./models/articles');
-var User = require('./models/users');	
+
 
 //var init_stocks = require('./routes/init_stocks'); 
 //init_stocks.init_stocks();
 
-//var init_suggestions = require('./routes/init_suggestions');
-//init_suggestions.init();
+
 
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -66,20 +63,15 @@ app.use(flash());
 
 var index = require('./routes/index');
 var about = require('./routes/about');
+var screen = require('./routes/screen');
 var articles = require('./routes/articles');
-var news = require('./routes/news');
-var search = require('./routes/search');
-var login = require('./routes/login');
-var signup = require('./routes/signup');
+
 
 
 app.use('/', index);
 app.use('/', about);
-app.use('/', news);
+app.use('/', screen);
 app.use('/', articles);
-app.use('/', search);
-app.use('/', login);
-app.use('/', signup);
 
 
 
@@ -104,37 +96,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-
-
-/*
-var http = require('http');
-
-function getStockData(callback) {
-
-    return http.get({
-        host: 'http://hq.sinajs.cn',
-        path: '/list=sh600000'
-    }, function(response) {
-        // Continuously update stream with data
-        var body = '';
-        response.on('data', function(d) {
-            body += d;
-			console.log(body);
-        });
-        response.on('end', function() {
-
-            // Data reception is done, do whatever with it!
-            var parsed = JSON.parse(body);
-            callback({
-                email: parsed.email,
-                password: parsed.pass
-            });
-        });
-    });
-
-}
-
-*/
 
 var http = require('http');
 http.globalAgent.maxSockets = 10;

@@ -3,12 +3,11 @@ var router = express.Router();
 var async = require('async');
 
 //import models
-var stock = require('../models/stocks');
-var article = require('../models/articles');
 
 /* GET article page. */
-router.post('/stocks', function(request, response) {
-	console.log('render stocks page');
+router.post('/search', function(request, response) {
+	console.log('render search page');
+	/*
 	var userQuery = request.body;
 	userQuery.userQueryInput = userQuery.userQueryInput.toUpperCase();
 	
@@ -83,7 +82,7 @@ router.post('/stocks', function(request, response) {
 	else{
 		response.render('pages/error',userQuery.userQueryInput);	
 	}
-	
+	*/
 });
 
 
