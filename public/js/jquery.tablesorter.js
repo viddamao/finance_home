@@ -252,10 +252,10 @@ $("#mainTable").tablesorter({
         pager_updateArrows: true,
 
         // starting page of the pager (zero based index)
-        pager_startPage: 0,
+        pager_startPage: 1,
 
         // Number of visible rows
-        pager_size: 25,
+        pager_size: 50,
 
         // Save pager page & size if the storage script is loaded (requires $.tablesorter.storage in jquery.tablesorter.widgets.js)
         pager_savePages: true,
