@@ -3,11 +3,11 @@ var app = express();
 
 
 //import mongoose module
-var bae = require('./bae');
-bae.getConnect();
-bae.testRedis();
+//var bae = require('./bae');
+//bae.getConnect();
+//bae.testRedis();
 
-markdown = require('markdown').markdown;
+//markdown = require('markdown').markdown;
 
 //import models
 
