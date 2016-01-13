@@ -1,4 +1,5 @@
-$(function() {
+$(document).ready(function(){
+$(function(){
 $("#mainTable").tablesorter({
 
     // *** APPEARANCE ***
@@ -285,6 +286,10 @@ $("#mainTable").tablesorter({
 
 });
 
+
+});
+});
+
 // Extend the themes to change any of the default class names ** NEW **
 $.extend($.tablesorter.themes.jui, {
     // change default jQuery uitheme icons - find the full list of icons
@@ -302,5 +307,3 @@ $.extend($.tablesorter.themes.jui, {
     odd: 'ui-state-default' // odd row zebra striping
 });
 
-
-});
