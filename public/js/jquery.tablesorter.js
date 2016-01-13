@@ -1,7 +1,7 @@
 $(document).ready(function(){
 $(function(){
 
-var $table = $('table'),
+var $table = $('#mainTable'),
   // define pager options
   pagerOptions = {
     // target the pager markup - see the HTML block below
@@ -19,7 +19,7 @@ var $table = $('table'),
     // go to page selector - select dropdown that sets the current page
     cssGoto: '.gotoPage'
   };	
-	
+   
 $("#mainTable").tablesorter({
 
     // *** APPEARANCE ***
@@ -424,6 +424,10 @@ $("#mainTable").tablesorter({
 
 });
 });
+
+
+
+$table.tablesorterPager(pagerOptions); 
 
 // Extend the themes to change any of the default class names ** NEW **
 $.extend($.tablesorter.themes.jui, {
