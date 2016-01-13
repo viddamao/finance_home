@@ -69,10 +69,10 @@
 			pageReset: 0,
 
 			// Number of visible rows
-			size: 10,
+			size: 20,
 
 			// Number of options to include in the pager number selector
-			maxOptionSize: 20,
+			maxOptionSize: 4,
 
 			// Save pager page & size if the storage script is loaded (requires $.tablesorter.storage in jquery.tablesorter.widgets.js)
 			savePages: true,
