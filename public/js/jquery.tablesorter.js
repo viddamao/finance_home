@@ -149,7 +149,7 @@ $("#mainTable").tablesorter({
     // 'columns', 'filter', 'stickyHeaders' & 'resizable'
     // 'uitheme' is another widget, but requires loading
     // a different skin and a jQuery UI theme.
-    widgets: ['zebra', 'columns'],
+    widgets: ['zebra', 'columns','filter'],
 
     widgetOptions: {
 
