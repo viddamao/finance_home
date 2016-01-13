@@ -26,11 +26,10 @@ $("#mainTable").tablesorter({
 
     // called after each header cell is rendered, use index to target the column
     // customize header HTML
-    onRenderHeader: function (index) {
-        // the span wrapper is added by default
-        $(this).find('div.tablesorter-header-inner').addClass('roundedCorners');
+	onRenderHeader: function(index){
+      // the TH content is wrapped with a div.tablesorter-header-inner by default, so just add the new class
+      $(this).find('div').addClass('roundedCorners header' + index );
     },
-
     // *** FUNCTIONALITY ***
     // prevent text selection in header
     cancelSelection: true,

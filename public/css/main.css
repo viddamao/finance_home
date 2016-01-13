@@ -41,10 +41,13 @@ table {
     border: 0;
     }
 	
- .roundedCorners {
-    border: #777 1px solid;
-    padding: 0 10px;
-    border-radius: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
+.roundedCorners {
+  border: #000 1px solid;
+  padding: 2px 8px;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+}
+.tablesorter-headerDesc .roundedCorners {
+  border-color: #fff;
 }
