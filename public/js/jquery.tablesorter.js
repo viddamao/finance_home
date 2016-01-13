@@ -162,7 +162,7 @@ $("#mainTable").tablesorter({
             "ui-widget-content even",
             "ui-state-default odd"],
 
-       
+		
 
         // columns widget: change the default column class names
         // primary is the 1st column sorted, secondary is the 2nd, etc
@@ -240,10 +240,131 @@ $("#mainTable").tablesorter({
         saveSort: true,
 
         // stickyHeaders widget: css class name applied to the sticky header
-        stickyHeaders: "tablesorter-stickyHeader"
+        stickyHeaders: "tablesorter-stickyHeader",
 		
 		
-		
+		// output default: '{page}/{totalPages}'
+        // possible variables: {size}, {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+        // also {page:input} & {startRow:input} will add a modifiable input in place of the value
+        pager_output: '{startRow} - {endRow} / {filteredRows} ({totalRows})', //'{startRow} to {endRow} of {totalRows} rows', // '{page}/{totalPages}'
+
+        // apply disabled classname to the pager arrows when the rows at either extreme is visible
+        pager_updateArrows: true,
+
+        // starting page of the pager (zero based index)
+        pager_startPage: 0,
+
+        // Number of visible rows
+        pager_size: 25,
+
+        // Save pager page & size if the storage script is loaded (requires $.tablesorter.storage in jquery.tablesorter.widgets.js)
+        pager_savePages: true,
+
+        // if true, the table will remain the same height no matter how many records are displayed. The space is made up by an empty
+        // table row set to a height to compensate; default is false
+        pager_fixedHeight: false,
+
+        // remove rows from the table to speed up the sort of large tables.
+        // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+        pager_removeRows: false, // removing rows in larger tables speeds up the sort
+
+        // If you want to use ajaxUrl placeholders, here is an example:
+        // ajaxUrl: "http:/mydatabase.com?page={page}&size={size}&{sortList:col}"
+        // where {page} is replaced by the page number (or use {page+1} to get a one-based index),
+        // {size} is replaced by the number of records to show,
+        // {sortList:col} adds the sortList to the url into a "col" array, and {filterList:fcol} adds
+        // the filterList to the url into an "fcol" array.
+        // So a sortList = [[2,0],[3,0]] becomes "&col[2]=0&col[3]=0" in the url
+        // and a filterList = [[2,Blue],[3,13]] becomes "&fcol[2]=Blue&fcol[3]=13" in the url
+        pager_ajaxUrl: 'assets/City{page}.json?{filterList:filter}&{sortList:column}',
+
+        // use this option to manipulate and/or add additional parameters to the ajax url
+        pager_customAjaxUrl:  function(table, url) {
+            // manipulate the url string as you desire
+            // url += '&currPage=' + window.location.pathname;
+            // trigger my custom event
+            $(table).trigger('changingUrl', url);
+            // send the server the current page
+            return url;
+        },
+
+        // ajax error callback from $.tablesorter.showError function
+        // pager_ajaxError: function( config, xhr, settings, exception ){ return exception; };
+        // returning false will abort the error message
+        pager_ajaxError: null,
+
+        // modify the $.ajax object to allow complete control over your ajax requests
+        pager_ajaxObject: {
+          dataType: 'json'
+        },
+
+        // process ajax so that the following information is returned:
+        // [ total_rows (number), rows (array of arrays), headers (array; optional) ]
+        // example:
+        // [
+        //   100,  // total rows
+        //   [
+        //     [ "row1cell1", "row1cell2", ... "row1cellN" ],
+        //     [ "row2cell1", "row2cell2", ... "row2cellN" ],
+        //     ...
+        //     [ "rowNcell1", "rowNcell2", ... "rowNcellN" ]
+        //   ],
+        //   [ "header1", "header2", ... "headerN" ] // optional
+        // ]
+        pager_ajaxProcessing: function(data){
+          if (data && data.hasOwnProperty('rows')) {
+            var indx, r, row, c, d = data.rows,
+            // total number of rows (required)
+            total = data.total_rows,
+            // array of header names (optional)
+            headers = data.headers,
+            // cross-reference to match JSON key within data (no spaces)
+            headerXref = headers.join(',').replace(/\s+/g,'').split(','),
+            // all rows: array of arrays; each internal array has the table cell data for that row
+            rows = [],
+            // len should match pager set size (c.size)
+            len = d.length;
+            // this will depend on how the json is set up - see City0.json
+            // rows
+            for ( r=0; r < len; r++ ) {
+              row = []; // new row array
+              // cells
+              for ( c in d[r] ) {
+                if (typeof(c) === "string") {
+                  // match the key with the header to get the proper column index
+                  indx = $.inArray( c, headerXref );
+                  // add each table cell data to row array
+                  if (indx >= 0) {
+                    row[indx] = d[r][c];
+                  }
+                }
+              }
+              rows.push(row); // add new row array to rows array
+            }
+            // in version 2.10, you can optionally return $(rows) a set of table rows within a jQuery object
+            return [ total, rows, headers ];
+          }
+        },
+
+        // css class names of pager arrows
+        pager_css: {
+          container   : 'tablesorter-pager',
+          errorRow    : 'tablesorter-errorRow', // error information row (don't include period at beginning)
+          disabled    : 'disabled'              // class added to arrows @ extremes (i.e. prev/first arrows "disabled" on first page)
+        },
+
+        // jQuery selectors
+        pager_selectors: {
+          container   : '.pager',       // target the pager markup (wrapper)
+          first       : '.first',       // go to first page arrow
+          prev        : '.prev',        // previous page arrow
+          next        : '.next',        // next page arrow
+          last        : '.last',        // go to last page arrow
+          gotoPage    : '.gotoPage',    // go to page selector - select dropdown that sets the current page
+          pageDisplay : '.pagedisplay', // location of where the "output" is displayed
+          pageSize    : '.pagesize'     // page size selector - select dropdown that sets the "size" option
+
+        }
     },
 
     // *** CALLBACKS ***
