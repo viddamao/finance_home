@@ -18,10 +18,8 @@ var app = express();
 
 
 var bodyParser = require('body-parser');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);	
 var favicon = require('serve-favicon');
-var flash = require('connect-flash');
+//var flash = require('connect-flash');
 var settings = require('./settings');
 	
 app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -31,35 +29,11 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(session({
-  secret: settings.cookieSecret,
-  key: settings.db,//cookie name
-  cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//30 days
-  store: new MongoStore({
-    db: settings.db,
-    host: settings.host,
-    port: settings.port
-  })
-}));
-
-app.use(function(req, res, next){
-  if(req.session.loggedIn){
-        res.locals.authenticated = true;
-        User.findById(req.session.loggedIn, function(err, doc){
-            if(err) return next(err);
-            res.locals.me = doc;
-            next();
-        });
-  } else {
-        res.locals.authenticated = false;
-        next();
-  }
-});
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(flash());
+//app.use(flash());
 
 var index = require('./routes/index');
 var about = require('./routes/about');
@@ -77,14 +51,14 @@ app.use('/', articles);
 
 
 // catch 404 and forward to error handler
-/*
+
 app.use("*",function(req, res, next) {
 	console.log("404");
 	var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-*/
+
 
 // production error handler
 // no stacktraces leaked to user
