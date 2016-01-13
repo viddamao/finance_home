@@ -180,7 +180,7 @@ $("#mainTable").tablesorter({
 
         // columns widget: If true, the class names from the columns
         // option will also be added to the table tfoot.
-        columns_tfoot: true,
+        columns_tfoot: false,
 
         // columns widget: If true, the class names from the columns
         // option will also be added to the table thead.
