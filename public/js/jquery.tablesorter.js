@@ -291,7 +291,7 @@ $("#mainTable").tablesorter({
 });
 
 // Extend the themes to change any of the default class names ** NEW **
-$.extend($.tablesorter-blackice.jui, {
+$.extend($.tablesorter.theme.blackice, {
     // change default jQuery uitheme icons - find the full list of icons
     // here: http://jqueryui.com/themeroller/ (hover over them for their name)
     table: 'ui-widget ui-widget-content ui-corner-all', // table classes
