@@ -1,7 +1,6 @@
 .jumbotron {
   background: black;
   color: white;
-  margin-top :300px;
   padding-top: 100px;
   padding-bottom: 30px; 
  }
@@ -21,7 +20,7 @@
 }
 
   .navbar + .jumbotron {
-    margin-top: -20px; }
+    margin-top: 0px; }
 
 table {
     padding: 0;
