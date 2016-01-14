@@ -198,7 +198,16 @@ $("#mainTable").tablesorter({
         // filter widget: Customize the filter widget by adding a select
         // dropdown with content, custom options or custom filter functions
         // see http://goo.gl/HQQLW for more details
-        filter_functions: null,
+        filter_functions: {
+			 2 : {
+          "<10"      : function(e, n, f, i, $r, c, data) { return n < 10; },
+          "$10 - $100" : function(e, n, f, i, $r, c, data) { return n >= 10 && n <=100; },
+          "100-1000"     : function(e, n, f, i, $r, c, data) { return n >= 100 && n <=1000; },
+          "1000-10000"     : function(e, n, f, i, $r, c, data) { return n >= 1000 && n <=10000; },
+		  ">10000"     : function(e, n, f, i, $r, c, data) { return n > 10000; }
+		}
+			
+		},
 
         // filter widget: Set this option to true to hide the filter row
         // initially. The rows is revealed by hovering over the filter
