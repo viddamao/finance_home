@@ -150,7 +150,7 @@ $("#mainTable").tablesorter({
     // 'columns', 'filter', 'stickyHeaders' & 'resizable'
     // 'uitheme' is another widget, but requires loading
     // a different skin and a jQuery UI theme.
-    widgets: ['zebra', 'columns','filter'],
+    widgets: ['zebra', 'columns','filter','scroller'],
 
     widgetOptions: {
 
@@ -241,7 +241,18 @@ $("#mainTable").tablesorter({
         saveSort: true,
 
         // stickyHeaders widget: css class name applied to the sticky header
-        stickyHeaders: "tablesorter-stickyHeader"
+        stickyHeaders: "tablesorter-stickyHeader",
+		
+		scroller_height : 300,
+		// scroll tbody to top after sorting
+		scroller_upAfterSort: true,
+		// pop table header into view while scrolling up the page
+		scroller_jumpToHeader: true,
+		// In tablesorter v2.19.0 the scroll bar width is auto-detected
+		// add a value here to override the auto-detected setting
+		scroller_barWidth : null
+		// scroll_idPrefix was removed in v2.18.0
+		// scroller_idPrefix : 's_'
 		
 		
     },
