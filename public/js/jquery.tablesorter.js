@@ -12,7 +12,7 @@ $("#mainTable").tablesorter({
     theme: 'blackice',
 
     // fix the column widths
-    widthFixed: true,
+    widthFixed: false,
 
     // Show an indeterminate timer icon in the header when the table
     // is sorted or filtered
