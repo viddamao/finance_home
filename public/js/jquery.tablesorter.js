@@ -191,7 +191,7 @@ $("#mainTable").tablesorter({
           "1000 - 10000"     : function(e, n, f, i, $r, c, data) { return n >= 1000 && n <=10000; },
 		  "> 10000"     : function(e, n, f, i, $r, c, data) { return n > 10000; }
 		},
-		// Total (jQuery selector added v2.17.0)
+		
 			3 : function($cell, indx){
           return $.tablesorter.filterFormatter.uiRange( $cell, indx, {
             delayed : false,
