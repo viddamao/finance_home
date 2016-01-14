@@ -197,9 +197,9 @@ $("#mainTable").tablesorter({
             delayed : false,
             valueToHeader : false,
             // jQuery UI slider options
-            values : [0, 10],
+            values : [0, 100],
             min : 1,
-            max : 10+
+            max : 100
           });
         },
 
