@@ -201,7 +201,7 @@ $("#mainTable").tablesorter({
             min : 1,
             max : 100
           });
-        },
+        }
 
 			
 		},
