@@ -101,8 +101,14 @@ $("#mainTable").tablesorter({
     // [[columnIndex, sortDirection], ... ]
     sortList: [
         [0, 0],
-        [1, 0]
-		
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [6, 0],
+        [7, 0],
+        [8, 0]
     ],
     // default sort that is added to the end of the users sort
     // selection.
@@ -135,6 +141,27 @@ $("#mainTable").tablesorter({
             return $(node).text();
         },
         1: function (node) {
+            return $(node).text();
+        },
+		2: function (node) {
+            return $(node).text();
+        },
+		3: function (node) {
+            return $(node).text();
+        },
+		4: function (node) {
+            return $(node).text();
+        },
+		5: function (node) {
+            return $(node).text();
+        },
+		6: function (node) {
+            return $(node).text();
+        },
+		7: function (node) {
+            return $(node).text();
+        },
+		8: function (node) {
             return $(node).text();
         }
     },
@@ -200,11 +227,11 @@ $("#mainTable").tablesorter({
         // see http://goo.gl/HQQLW for more details
         filter_functions: {
 			 2 : {
-          "<10"      : function(e, n, f, i, $r, c, data) { return n < 10; },
-          "$10 - $100" : function(e, n, f, i, $r, c, data) { return n >= 10 && n <=100; },
-          "100-1000"     : function(e, n, f, i, $r, c, data) { return n >= 100 && n <=1000; },
-          "1000-10000"     : function(e, n, f, i, $r, c, data) { return n >= 1000 && n <=10000; },
-		  ">10000"     : function(e, n, f, i, $r, c, data) { return n > 10000; }
+          "< 10"      : function(e, n, f, i, $r, c, data) { return n < 10; },
+          "10 - 100" : function(e, n, f, i, $r, c, data) { return n >= 10 && n <=100; },
+          "100 - 1000"     : function(e, n, f, i, $r, c, data) { return n >= 100 && n <=1000; },
+          "1000 - 10000"     : function(e, n, f, i, $r, c, data) { return n >= 1000 && n <=10000; },
+		  "> 10000"     : function(e, n, f, i, $r, c, data) { return n > 10000; }
 		}
 			
 		},
