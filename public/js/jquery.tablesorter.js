@@ -70,7 +70,7 @@ $("#mainTable").tablesorter({
             sorter: "text"
         },
         2: {
-            sorter: "text"
+            sorter: "number"
         },
         3: {
             sorter: "number"
@@ -83,7 +83,13 @@ $("#mainTable").tablesorter({
         },
 		6: {
             sorter: "number"
-        }
+        },
+		7: {
+            sorter: "number"
+        },
+		8: {
+            sorter: "number"
+        },
     },
 
     // ignore case while sorting
@@ -95,8 +101,7 @@ $("#mainTable").tablesorter({
     // [[columnIndex, sortDirection], ... ]
     sortList: [
         [0, 0],
-        [1, 0],
-        [2, 0]
+        [1, 0]
 		
     ],
     // default sort that is added to the end of the users sort
@@ -130,9 +135,6 @@ $("#mainTable").tablesorter({
             return $(node).text();
         },
         1: function (node) {
-            return $(node).text();
-        },
-		2: function (node) {
             return $(node).text();
         }
     },
@@ -169,8 +171,7 @@ $("#mainTable").tablesorter({
         // primary is the 1st column sorted, secondary is the 2nd, etc
         columns: [
             "primary",
-            "secondary",
-            "tertiary"],
+            "secondary"],
 
         // columns widget: If true, the class names from the columns
         // option will also be added to the table tfoot.
