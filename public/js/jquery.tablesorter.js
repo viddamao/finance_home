@@ -97,19 +97,10 @@ $("#mainTable").tablesorter({
 
     // forces the user to have this/these column(s) sorted first
     sortForce: null,
+	
     // initial sort order of the columns, example sortList: [[0,0],[1,0]],
     // [[columnIndex, sortDirection], ... ]
-    sortList: [
-        [0, 0],
-        [1, 0],
-        [2, 0],
-        [3, 0],
-        [4, 0],
-        [5, 0],
-        [6, 0],
-        [7, 0],
-        [8, 0]
-    ],
+ 
     // default sort that is added to the end of the users sort
     // selection.
     sortAppend: null,
