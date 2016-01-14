@@ -98,9 +98,6 @@ $("#mainTable").tablesorter({
     // forces the user to have this/these column(s) sorted first
     sortForce: null,
 	
-    // initial sort order of the columns, example sortList: [[0,0],[1,0]],
-    // [[columnIndex, sortDirection], ... ]
- 
     // default sort that is added to the end of the users sort
     // selection.
     sortAppend: null,
@@ -125,37 +122,7 @@ $("#mainTable").tablesorter({
     // sort strings in numerical column as max, min, top, bottom, zero
     stringTo: "max",
 
-    // extract text from the table - this is how is
-    // it done by default
-    textExtraction: {
-        0: function (node) {
-            return $(node).text();
-        },
-        1: function (node) {
-            return $(node).text();
-        },
-		2: function (node) {
-            return $(node).text();
-        },
-		3: function (node) {
-            return $(node).text();
-        },
-		4: function (node) {
-            return $(node).text();
-        },
-		5: function (node) {
-            return $(node).text();
-        },
-		6: function (node) {
-            return $(node).text();
-        },
-		7: function (node) {
-            return $(node).text();
-        },
-		8: function (node) {
-            return $(node).text();
-        }
-    },
+ 
 
     // use custom text sorter
     // function(a,b){ return a.sort(b); } // basic sort
