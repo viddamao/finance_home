@@ -1,0 +1,37 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var funds = new mongoose.Schema({
+        name:String,
+        id:String,
+		id_int:Number,
+		founder:String,
+		size:Number,
+		since:Number,
+		rtr:[Number],
+		one_qtr:Number,
+		one_year:Number,
+		three_year:Number,
+		annual_rtr:Number,
+		total_rtr:Number,
+		strategy:String,
+		type:String,
+		region:String,
+		field:String,
+		summary:String,
+		pm_summary:String
+			
+	});
+
+module.exports = funds;
+
+
+
+
+
+
+
+
+
+
+
