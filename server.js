@@ -3,8 +3,8 @@ var app = express();
 
 
 //import mongoose module
-//var bae = require('./bae');
-//bae.getConnect();
+var bae = require('./bae');
+bae.getConnect();
 //bae.testRedis();
 
 //markdown = require('markdown').markdown;
@@ -12,8 +12,8 @@ var app = express();
 //import models
 
 
-//var init_stocks = require('./routes/init_stocks'); 
-//init_stocks.init_stocks();
+var init_funds = require('./routes/init_funds'); 
+init_funds.init_funds();
 
 
 
