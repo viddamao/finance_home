@@ -4,7 +4,7 @@ var app = express();
 
 //import mongoose module
 var bae = require('./bae');
-bae.getConnect();
+//bae.getConnect();
 //bae.testRedis();
 
 //markdown = require('markdown').markdown;
@@ -13,7 +13,7 @@ bae.getConnect();
 
 
 var init_funds = require('./routes/init_funds'); 
-init_funds.init_funds();
+//init_funds.init_funds();
 
 
 
