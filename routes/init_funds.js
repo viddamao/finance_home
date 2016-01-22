@@ -1,9 +1,9 @@
 
-var Funds = require('./models/funds');
+var Funds = require('./models/fund');
 var fs = require('fs');
 //var counter = 0;
 
-function readLines(input, add_stock) {
+function readLines(input, add_fund) {
   var remaining = ''	//remaining input stream
   
 
