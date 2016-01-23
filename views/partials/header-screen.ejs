@@ -1,0 +1,98 @@
+	<!-- bootstrap widget theme -->
+	<link rel="stylesheet" type="text/css" href="/css/theme.bootstrap.css">
+	
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/theme.black-ice.css">
+	<link rel="stylesheet" type="text/css" href="/css/theme.jui.css">
+	
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+
+	
+	<!-- tablesorter plugin -->
+	<script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+	
+	<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.tablesorter.widgets.js"></script>
+	
+	<!-- pager plugin -->
+	<link rel="stylesheet" type="text/css" href="/css/jquery.tablesorter.pager.css">
+
+	<script type="text/javascript" src="/js/jquery.tablesorter.pager.js"></script>
+	
+	<script type="text/javascript" src="/js/widgets/widget-scroller.js"></script>
+	
+	
+<!-- filter formatter code -->
+<link rel="stylesheet" type="text/css" href="/css/filter.formatter.min.css">
+<script type="text/javascript" src="/js/widget-filter-formatter-jui.min.js"></script>
+	
+	
+	
+	<style id="css">
+	/* Fixed column scroll bar spacer styling */
+.tablesorter-scroller-bar-spacer {
+	background: #eee;
+}
+/* add border to right side (LTR pages) of fixed column */
+.tablesorter-scroller-fixed:after {
+	content: '';
+	border-right: 1px solid #444;
+	width: 1px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	/* set to zero for non-jquery ui themes; use "left" here for RTL pages */
+	right: 0;
+	/* match the margins set to the table to keep the border the same height as the table */
+	margin: 10px 0 15px;
+}
+
+/* using-x-theme added by the demo code */
+.using-jui-theme .tablesorter-scroller-fixed:after {
+	/* set to -2px for jquery ui themes; use "left" here for RTL pages */
+	right: -2px;
+}
+.using-green-theme .tablesorter-scroller-fixed:after,
+.using-black-ice-theme .tablesorter-scroller-fixed:after,
+.using-dark-theme .tablesorter-scroller-fixed:after,
+.using-dropbox-theme .tablesorter-scroller-fixed:after {
+	/* match the margins set to the table to keep the border the same height as the table */
+	margin: 0;
+}
+
+/* OPTIONAL CSS! */
+#fixed-columns-table tbody td {
+	/* force "Notes" column to not wrap, so we get a horizontal scrolling demo! */
+	white-space: nowrap;
+	/* Add min column width, or "Index" column filter gets too narrow to use */
+	min-width: 60px;
+}
+</style>
+
+<script id="js">
+$(function(){
+
+	$('.tablesorter').tablesorter({
+		theme: 'jui',
+		showProcessing: true,
+		headerTemplate : '{content} {icon}',
+		widgets: [ 'uitheme', 'zebra', 'filter', 'scroller' ],
+		widgetOptions : {
+			scroller_height : 300,
+			// scroll tbody to top after sorting
+			scroller_upAfterSort: true,
+			// pop table header into view while scrolling up the page
+			scroller_jumpToHeader: true,
+			// In tablesorter v2.19.0 the scroll bar width is auto-detected
+			// add a value here to override the auto-detected setting
+			scroller_barWidth : null
+			// scroll_idPrefix was removed in v2.18.0
+			// scroller_idPrefix : 's_'
+		}
+	});
+	
+</script>
+	
