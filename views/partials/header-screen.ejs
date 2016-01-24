@@ -70,9 +70,10 @@
 	/* Add min column width, or "Index" column filter gets too narrow to use */
 	min-width: 60px;
 }
-</style>
 
-<script id="js">
+
+
+<script type="text/javascript" id="js">
 $(function(){
 
 	$('.tablesorter').tablesorter({
@@ -93,6 +94,15 @@ $(function(){
 			// scroller_idPrefix : 's_'
 		}
 	});
-	
+
+$(function(){
+$(".title").hover(function(){
+$(".content").show(1000);
+},function(){
+$(".content").hide(1000);
+}
+)
+})；
 </script>
-	
+
+</style>
