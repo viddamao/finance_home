@@ -43,10 +43,14 @@ table {
     }
 
  #maintable{
-	margin-left:100px;
+	margin-left:0px;
 	margin-right:100px;
 }
 	
+#myfilters{
+	
+	margin-right:0px;
+}
 .roundedCorners {
   border: #000 1px solid;
   padding: 2px 8px;
