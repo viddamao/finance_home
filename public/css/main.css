@@ -41,6 +41,11 @@ table {
     margin: 0;
     border: 0;
     }
+
+ #maintable{
+	margin-left:100px;
+	margin-right:100px;
+}
 	
 .roundedCorners {
   border: #000 1px solid;
@@ -49,3 +54,5 @@ table {
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
 }
+
+
