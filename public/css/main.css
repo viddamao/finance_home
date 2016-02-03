@@ -51,6 +51,18 @@ table {
 	
 	margin-right:0;
 }
+
+#myfilters ul{
+	
+	color:blue;
+}
+
+#myfilters #filter-type{
+	
+	color:black;
+}
+
+
 .roundedCorners {
   border: #000 1px solid;
   padding: 2px 8px;
