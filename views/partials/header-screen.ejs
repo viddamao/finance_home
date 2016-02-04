@@ -97,7 +97,7 @@ $(function(){
 	});
 	
 
- $(document).tooltip();
+
   $( "#size-slider" ).slider({
       range: true,
       min: 0,
@@ -107,16 +107,18 @@ $(function(){
         $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-$(function(){
-$(".tablesorter-headerRow").hover(function(){
-$(".content").show(1000);
-},function(){
-$(".content").hide(1000);
-}
-)
-})；
+    $( "#amount" ).val( "$" + $( "#size-slider" ).slider( "values", 0 ) +
+      " - $" + $( "#size-slider" ).slider( "values", 1 ) );
+
+	$(".tablesorter-headerRow").hover(function(){
+	$(".content").show(1000);
+	},function(){
+	$(".content").hide(1000);
+	}
+	);
+	
+});
+
 </script>
 
 </style>
