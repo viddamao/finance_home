@@ -94,7 +94,7 @@ $(function(){
 		}
 	});
 	
-	 $( "#slider-range" ).slider({
+	 $( "#size-slider" ).slider({
       range: true,
       min: 0,
       max: 500,
@@ -103,8 +103,8 @@ $(function(){
         $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "$" + $( "#size-slider" ).slider( "values", 0 ) +
+      " - $" + $( "#size-slider" ).slider( "values", 1 ) );
 	
 	
 });
