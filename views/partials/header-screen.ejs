@@ -77,14 +77,26 @@ $(function(){
 	 $( "#size-slider" ).slider({
       range: true,
       min: 0,
-      max: 500,
-      values: [ 75, 300 ],
+      max: 10000,
+      values: [ 0, 10000 ],
       slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        $( "#size-val" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "$" + $( "#size-slider" ).slider( "values", 0 ) +
+    $( "#size-val" ).val( "$" + $( "#size-slider" ).slider( "values", 0 ) +
       " - $" + $( "#size-slider" ).slider( "values", 1 ) );
+	  
+	 $( "#since-slider" ).slider({
+      range: true,
+      min: 0,
+      max: 15,
+      values: [ 0, 15 ],
+      slide: function( event, ui ) {
+        $( "#since-val" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#since-val" ).val( "$" + $( "#since-slider" ).slider( "values", 0 ) +
+      " - $" + $( "#since-slider" ).slider( "values", 1 ) );
 	  
 	
 });
