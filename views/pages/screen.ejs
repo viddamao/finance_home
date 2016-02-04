@@ -80,51 +80,54 @@
     </div>
 </div> <!-- filters -->
 
-<div id="mytable"> 
-<table id="mainTable" class="table tablesorter table-bordered table-responsive"> <!-- bootstrap classes added by the uitheme widget -->
-  <thead>
-    <tr  class="tablesorter-headerRow">
+
+<div id="main-display">
+	<div id="mytable"> 
+		<table id="mainTable" class="table tablesorter table-bordered table-responsive"> <!-- bootstrap classes added by the uitheme widget -->
+		<thead>
+			<tr  class="tablesorter-headerRow">
+				
+				<th class="tablesorter-header"><div class="tablesorter-header-inner roundedCorners header0"> <a href="#" title="锚描述">锚文本</a> <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header1"> Founder <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header2"> Size <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header3"> Since <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header4"> Quarter <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header5"> 1 Year <i class="tablesorter-icon"></i></div></th>	
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header6"> 3 Year  <i class="tablesorter-icon"></i></div></th>
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header7"> Annual Return <i class="tablesorter-icon"></i></div></th>	
+				<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header8"> Total <i class="tablesorter-icon"></i></div></th>	
+			
+			</tr>
+		</thead>
 		
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header0"> Name <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header1"> Founder <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header2"> Size <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header3"> Since <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header4"> Quarter <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header5"> 1 Year <i class="tablesorter-icon"></i></div></th>	
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header6"> 3 Year  <i class="tablesorter-icon"></i></div></th>
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header7"> Annual Return <i class="tablesorter-icon"></i></div></th>	
-		<th class="tablesorter-header" title="单击排序当前列"><div class="tablesorter-header-inner roundedCorners header8"> Total <i class="tablesorter-icon"></i></div></th>	
-	
-	</tr>
-  </thead>
-  
-  <tbody>
-    <tr><td>TYRUS CAPITAL S.A.M.</td><td>Bob</td><td>123</td><td>5</td><td>75</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
-    <tr><td>TWIN CAPITAL MANAGEMENT INC</td><td>Mike</td><td>1214</td><td>10</td><td>100</td><td>90</td><td>80</td><td>80</td><td>80</td></tr>
-    <tr><td>MATRIX CAPITAL MANAGEMENT</td><td>Max</td><td>85</td><td>3</td><td>80</td><td>85</td><td>80</td><td>80</td><td>80</td></tr>
-    <tr><td>SANDLER O'NEILL ASSET MGMT LLC</td><td>David</td><td>234</td><td>7</td><td>100</td><td>100</td><td>80</td><td>80</td><td>80</td></tr>
-    <tr><td>ETON PARK CAPITAL MANAGEMENT</td><td>Rob</td><td>12456</td><td>6</td><td>95</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
-    
-  </tbody>
-</table>
+		<tbody>
+			<tr><td>TYRUS CAPITAL S.A.M.</td><td>Bob</td><td>123</td><td>5</td><td>75</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
+			<tr><td>TWIN CAPITAL MANAGEMENT INC</td><td>Mike</td><td>1214</td><td>10</td><td>100</td><td>90</td><td>80</td><td>80</td><td>80</td></tr>
+			<tr><td>MATRIX CAPITAL MANAGEMENT</td><td>Max</td><td>85</td><td>3</td><td>80</td><td>85</td><td>80</td><td>80</td><td>80</td></tr>
+			<tr><td>SANDLER O'NEILL ASSET MGMT LLC</td><td>David</td><td>234</td><td>7</td><td>100</td><td>100</td><td>80</td><td>80</td><td>80</td></tr>
+			<tr><td>ETON PARK CAPITAL MANAGEMENT</td><td>Rob</td><td>12456</td><td>6</td><td>95</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
+			
+		</tbody>
+		</table>
+		
+		<div id="pager" class="pager">
+		<form>
+			<img src="first.png" class="first"/>
+			<img src="prev.png" class="prev"/>
+			<span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+			<img src="next.png" class="next"/>
+			<img src="last.png" class="last"/>
+			<select class="pagesize">
+			<option selected = "selected" value="10">10</option>
+			<option value="20">20</option>
+			<option value="50">50</option>
+			<option value="all">All</option>
+			</select>
+		</form>
+		</div>
+	</div>  <!--my table-->
 
-<div id="pager" class="pager">
-  <form>
-    <img src="first.png" class="first"/>
-    <img src="prev.png" class="prev"/>
-    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-    <img src="next.png" class="next"/>
-    <img src="last.png" class="last"/>
-    <select class="pagesize">
-      <option selected = "selected" value="10">10</option>
-      <option value="20">20</option>
-      <option value="50">50</option>
-      <option value="all">All</option>
-    </select>
-  </form>
-</div>
-</div>  <!--table-->
-
+</div>  <!--main display-->
 
 </body>
 </html>
