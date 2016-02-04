@@ -92,7 +92,7 @@ $(function(){
       max: 15,
       values: [ 0, 15 ],
       slide: function( event, ui ) {
-        $( "#since-val" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        $( "#since-val" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
       }
     });
     $( "#since-val" ).val( "$" + $( "#since-slider" ).slider( "values", 0 ) +
