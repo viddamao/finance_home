@@ -98,7 +98,17 @@ $(function(){
 	
 
  $(document).tooltip();
- 
+  $( "#size-slider" ).slider({
+      range: true,
+      min: 0,
+      max: 4,
+      values: [ 0, 4 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 $(function(){
 $(".tablesorter-headerRow").hover(function(){
 $(".content").show(1000);
