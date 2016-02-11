@@ -9,8 +9,7 @@
 		"founder": "Wang"
 });
 	
-	
-	
+
 	
 	fund1.save(function(err, fund1) {
 		if (err) return console.error(err);

@@ -6,7 +6,7 @@
  }
  
  #bg{
-	background:url('../background.jpg') no-repeat center center;
+  background:url('../background.jpg') no-repeat center center;
     height: 225px;
 }
  
@@ -30,8 +30,8 @@ table {
     }
 
     td {
-	white-space:nowrap;
-	width:20px;
+  white-space:nowrap;
+  width:20px;
     padding: 0 5px 0 0;
     margin: 0;
     border: 0;
@@ -43,34 +43,34 @@ table {
     }
 
  #mytable{
-	margin-left:0;
-	margin-right:100px;
+  margin-left:0;
+  margin-right:100px;
 }
-	
+  
 #myfilters{
-	margin-right:0;
+  margin-right:0;
 }
 
 #myfilters ul{
-	
-	color:blue;
+  
+  color:blue;
 }
 
 #myfilters .filter-type{
-	font-weight:bold;
-	color:black;
+  font-weight:bold;
+  color:black;
 }
 
 
 .roundedCorners {
-	border: #000 1px solid;
-	padding: 2px 8px;
-	border-radius: 1em;
-	-moz-border-radius: 1em;
-	-webkit-border-radius: 1em;
+  border: #000 1px solid;
+  padding: 2px 8px;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
 }
 
 #size-slider{
-	margin: 10px; 	
+  margin: 10px;   
 }
 
