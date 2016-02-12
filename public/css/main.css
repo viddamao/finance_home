@@ -5,6 +5,11 @@
   padding-bottom: 30px; 
  }
  
+ #item{
+
+  width:800px;
+  height:500px;
+ }
  #bg{
   background:url('../background.jpg') no-repeat center center;
     height: 225px;
