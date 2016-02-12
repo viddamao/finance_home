@@ -17,8 +17,5 @@ router.get('/', function(req, res) {
 	});
 });
 
-router.get('/public/background.jpg', function(req, res) {
-	res.send('../public/background.jpg');
-});
 
 module.exports = router;
