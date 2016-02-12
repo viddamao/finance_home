@@ -24,11 +24,6 @@
     color: black;
 }
 
-.nav li{
-  display:inline;
-  position:absolute;
-}
-
   .navbar + .jumbotron {
     margin-top: 0px; }
 }
