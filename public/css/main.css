@@ -24,8 +24,13 @@
     color: black;
 }
 
+nav li{
+  display:inline;
+}
+
   .navbar + .jumbotron {
     margin-top: 0px; }
+}
 
 table {
     padding: 0;
