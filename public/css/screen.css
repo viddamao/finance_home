@@ -4,8 +4,8 @@
   color:black;
 }
 
-#myfilters ul{
-  margin-top: 10px;
+#myfilters dl{
+  margin: 10px auto 10px;
 }
 
 dl,dd{
