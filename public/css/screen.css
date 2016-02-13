@@ -8,6 +8,14 @@
   margin-top: 10px;
 }
 
+dl,dd{
+  float:left
+}
+dl,dd,dt{
+  margin:0 auto;
+  padding:0 auto
+}
+
 .roundedCorners {
   border: #000 1px solid;
   padding: 2px 8px;
