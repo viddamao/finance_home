@@ -29,15 +29,19 @@ dl,dd,dt{
   -webkit-border-radius: 1em;
 }
 
+
+/*slider*/
+#sliders{
+  margin-left: 50px;
+}
 #sliders p{
 
 font-weight:bold;
 }
-/*slider*/
 .slider-val{
 
 border:0; 
-margin: 10px 50px 10px;
+margin-bottom:10px;
 color:black; 
 font-weight:bold;
 background-color: #DBD7D2;
