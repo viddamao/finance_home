@@ -1,13 +1,12 @@
 
-#current-filter{
-  margin-bottom: 200px;
-}  
-
 #myfilters .filter-type{
   font-weight:bold;
   color:black;
 }
 
+#myfilters ul{
+  margin-top: 30px;
+}
 
 .roundedCorners {
   border: #000 1px solid;
