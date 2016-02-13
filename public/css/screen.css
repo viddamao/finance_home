@@ -20,18 +20,9 @@ table {
     }
 
  #mytable{
-  margin-left:0;
   margin-right:100px;
 }
   
-#myfilters{
-  margin-right:0;
-}
-
-#myfilters ul{
-  
-  color:blue;
-}
 
 #myfilters .filter-type{
   font-weight:bold;
