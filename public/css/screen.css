@@ -6,9 +6,6 @@
   color:black;
 }
 
-#myfilters input{
-  background-color: #DBD7D2;
-}
 
 .roundedCorners {
   border: #000 1px solid;
@@ -18,6 +15,15 @@
   -webkit-border-radius: 1em;
 }
 
+/*slider*/
+#side-val{
+
+border:0; 
+color:black; 
+font-weight:bold;
+background-color: #DBD7D2;
+
+}
 /*table*/
 table {
     padding: 0;
