@@ -14,7 +14,7 @@ li{
 input,select,textarea{
 	outline:none;
 }
-label{
+input{
 	background-color: none;
 }
 a{
