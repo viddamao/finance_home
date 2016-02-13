@@ -9,9 +9,7 @@
 <body>
 
 <% include ../partials/nav.ejs %>
-<div class="col-md-2" id= "left-col">
-	
-</div>	
+
 
 <div class="jumbotron text-left" id = "bg">
   
@@ -24,8 +22,14 @@
  
 </div>  
 
-<div id="maindisplay" class="row">
-  <div id="myCarousel" class="carousel slide col-md-10" data-ride="carousel">
+<div id="maindisplay" class="container">
+
+<div  class="row">
+<div class="col-md-2" id= "left-col">
+    
+</div>  
+<div class="col-md-10" id="slider">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="item">
             <img alt="" src="http://pic1.win4000.com/wallpaper/7/511f2a586c263.jpg">
@@ -52,12 +56,15 @@
     <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
     <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
 </div>
-</div><!--main display-->
-
 </div>
 
 <div id= "right-col" class="col-md-2">
-	
+    
+</div>
+
+</div>
+</div><!--main display-->
+
 
 
 </body>
