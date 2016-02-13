@@ -16,7 +16,7 @@
 }
 
 /*slider*/
-#size-val{
+.slider-val{
 
 border:0; 
 color:black; 
@@ -24,6 +24,7 @@ font-weight:bold;
 background-color: #DBD7D2;
 
 }
+
 /*table*/
 table {
     padding: 0;
