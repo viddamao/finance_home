@@ -46,3 +46,7 @@ table {
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
 }
+
+#mytable{
+  margin-top: 50px;
+}
