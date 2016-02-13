@@ -6,6 +6,9 @@
   color:black;
 }
 
+#myfilters .a{
+  background-color: #DBD7D2;
+}
 
 .roundedCorners {
   border: #000 1px solid;
