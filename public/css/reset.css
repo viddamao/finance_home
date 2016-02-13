@@ -17,3 +17,17 @@ input,select,textarea{
 a{
 	text-decoration: none;
 }
+
+/*清浮动*/
+.clearfix:after{content:"";*display:block;*clear:both;}
+.clearfix{zoom:1;}
+
+/*选择*/
+::selection {background-color:#669900; color:#ffffff; text-shadow:none;}
+::-moz-selection {background-color:#669900; color:#ffffff;text-shadow:none;}
+
+
+/*去掉a的下划线*/
+a {blr:expression(this.onFocus=this.blur())} /*if IE*/
+a {outline:none;}/*if 火狐等现代浏览器浏览器*/ 
+
