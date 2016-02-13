@@ -1,5 +1,7 @@
 
-  
+#current-filter{
+  margin-bottom: 10px;
+}  
 
 #myfilters .filter-type{
   font-weight:bold;
