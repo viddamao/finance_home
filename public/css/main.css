@@ -1,6 +1,13 @@
 body{
   background-color: #DBD7D2;
 }
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
 /*nav*/
 .jumbotron {
   background: black;
