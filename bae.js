@@ -132,12 +132,5 @@ exports.testRedis = testRedis;
 //exports.putRedis = putRedis;
 //exports.getRedis = getRedis;
 
-exports.getConnect = getConnect; //包含到module.exports对象中,  
-// 如果module.exports中包含属性或方法则export.XX将被忽略  
-// Module.exports才是真正的接口，exports只不过是它的一个辅助工具。  
-// 最终返回给调用的是Module.exports而不是exports。  
-// 所有的exports收集到的属性和方法，都赋值给了Module.exports。  
-// 当然，这有个前提，就是Module.exports本身不具备任何属性和方法。  
-// 如果，Module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。  
-//module.exports = getConnection;//直接导出这个对象  
+exports.getConnect = getConnect;
 exports.mongoose = mongoose;
