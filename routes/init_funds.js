@@ -95,7 +95,7 @@ function init_funds(){
 
 
 var iconv = require('iconv-lite'); 
-var bin = fs.readFileSync('fundList.txt');
+var bin = fs.readFileSync('../public/fundList.txt');
 //splice file head
  if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
      bin = bin.slice(3);
