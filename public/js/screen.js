@@ -11,7 +11,7 @@ $(function(){
 	 $( "#size-slider" ).slider({
       range: true,
       min: 0,
-      max: 10000,
+      max: 100,
       values: [ 0, 10000 ],
       slide: function( event, ui ) {
         $( "#size-val" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
