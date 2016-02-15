@@ -36,7 +36,6 @@ app.set('view engine', 'ejs');
 //app.use(flash());
 
 
-var routes = require('./routes');
 var index = require('./routes/index');
 var about = require('./routes/about');
 var screen = require('./routes/screen');
@@ -45,9 +44,9 @@ var articles = require('./routes/articles');
 
 
 
-app.use('/', index);
+app.get('/', index);
 app.use('/', about);
-app.get('/screen', routes.screen);
+//app.get('/screen', screen);
 app.use('/', articles);
 
 
