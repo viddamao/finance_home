@@ -17,6 +17,6 @@ router.get('/screen', function(req, res) {
         });
     };
 };
-
+});
 
 module.exports = router;
