@@ -45,9 +45,9 @@ var articles = require('./routes/articles');
 
 
 app.get('/', index);
-app.use('/', about);
+app.get('/about', about);
 //app.get('/screen', screen);
-app.use('/', articles);
+app.get('/articles', articles);
 
 
 
