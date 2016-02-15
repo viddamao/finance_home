@@ -28,7 +28,7 @@ function readLines(input, add_fund) {
  */
 function add_fund(data) {
 	//counter++;
-	var id = 0;				//fund id
+	var id = "";			//fund id
 	var name = "";			//fund name
 	var founder ="";
 	var size=0;				//fund size
@@ -51,7 +51,7 @@ function add_fund(data) {
 
 	console.log(dataArr);
 	dataArr.reverse();
-	/*
+	
 	field    = dataArr.pop();
 	region   = dataArr.pop();
 	type 	 = dataArr.pop();
@@ -59,7 +59,7 @@ function add_fund(data) {
 	since    = parseInt(dataArr.pop());
 	size     = parseFloat(dataArr.pop());
 	name     = dataArr.pop();
-	id       = parseInt(dataArr.pop());
+	id       = dataArr.pop();
 
 	var fundQuery = Fund.findOne({ id: id},function (err, result){
 		
@@ -89,7 +89,7 @@ function add_fund(data) {
 	});
 	}
 	});
-	*/
+	
 }
 
 function init_funds(){
