@@ -35,5 +35,5 @@ $(function(){
 	
 });
 
-var transTable = {"global","全球"};
+var transTable = {"global":"全球"};
 transTable.set("mixed","混合");
