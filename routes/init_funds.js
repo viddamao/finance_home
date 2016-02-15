@@ -49,7 +49,6 @@ function add_fund(data) {
 		
   	}
 
-	console.log(dataArr);
 	dataArr.reverse();
 	
 	id       = dataArr.pop();
