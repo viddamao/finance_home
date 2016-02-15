@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var fundSchema = require('../schemas/funds');
-var funds = mongoose.model('funds', fundSchema);
+var fundSchema = require('../schemas/fund');
+var fund = mongoose.model('fund', fundSchema);
 
 
-module.exports = Funds;
+module.exports = Fund;

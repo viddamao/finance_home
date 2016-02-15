@@ -1,5 +1,5 @@
 
-var Funds = require('./models/fund');
+var Fund = require('./models/fund');
 var fs = require('fs');
 
 function readLines(input, add_fund) {
@@ -61,7 +61,7 @@ function add_fund(data) {
 	name     = dataArr.pop();
 	id       = parseInt(dataArr.pop());
 
-	var fundQuery = funds.findOne({ id: id},function (err, result){
+	var fundQuery = fund.findOne({ id: id},function (err, result){
 		
 	
 	if (err){
@@ -70,7 +70,7 @@ function add_fund(data) {
 	
 	if (result==null)
 	{	
-	var new_fund = new Funds({
+	var new_fund = new Fund({
 		"name" 	  : name,
         "id" 	  : id,
 		"founder" : founder,

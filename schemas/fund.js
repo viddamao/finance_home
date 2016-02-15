@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var funds = new mongoose.Schema({
+var fund = new mongoose.Schema({
         name:String,
         id:Number,
 		founder:String,
@@ -22,7 +22,7 @@ var funds = new mongoose.Schema({
 			
 	});
 
-module.exports = funds;
+module.exports = fund;
 
 
 
