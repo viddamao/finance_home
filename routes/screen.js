@@ -11,7 +11,9 @@ router.get('/screen', function(req, res) {
         collection.find({},{},function(e,docs){ //取得所有的集合数据, 渲染到页面上,关键字是userlist
             res.render('./pages/screen', {
                 "users" : docs
-            });
+            },function(err, html) {
+				res.send(html);
+			});
         });
     };
 };
