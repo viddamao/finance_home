@@ -52,14 +52,14 @@ function add_fund(data) {
 	console.log(dataArr);
 	dataArr.reverse();
 
-	field = dataArr.pop();
-	region = dataArr.pop();
-	type = dataArr.pop();
+	field    = dataArr.pop();
+	region   = dataArr.pop();
+	type 	 = dataArr.pop();
 	strategy = dataArr.pop();
-	since = parseInt(dataArr.pop());
-	size = parseFloat(dataArr.pop());
-	name = dataArr.pop();
-	id  = parseInt(dataArr.pop());
+	since    = parseInt(dataArr.pop());
+	size     = parseFloat(dataArr.pop());
+	name     = dataArr.pop();
+	id       = parseInt(dataArr.pop());
 
 	var fundQuery = funds.findOne({ id: id},function (err, result){
 		
@@ -71,9 +71,16 @@ function add_fund(data) {
 	if (result==null)
 	{	
 	var new_fund = new Funds({
-		"name" 	: name,
-        "id" 	: id,
-		"founder":founder
+		"name" 	  : name,
+        "id" 	  : id,
+		"founder" : founder,
+		"since"   : since,
+		"size"    : size,
+		"field"   : field,
+		"region"  : region,
+		"type" 	  : type,
+		"strategy":	strategy	
+
 	});  
 	
 	new_fund.save(function(err, new_fund) {
@@ -89,10 +96,10 @@ function init_funds(){
 
 var iconv = require('iconv-lite'); 
 var bin = fs.readFileSync('fundList.txt');
-
-    if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
-        bin = bin.slice(3);
-    }
+//splice file head
+ if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
+     bin = bin.slice(3);
+ }
 
 readLines(bin.toString('utf-8'),add_fund);
 console.log('hello');
