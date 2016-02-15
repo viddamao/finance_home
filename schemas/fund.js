@@ -3,8 +3,7 @@ var Schema = mongoose.Schema;
 
 var funds = new mongoose.Schema({
         name:String,
-        id:String,
-		id_int:Number,
+        id:Number,
 		founder:String,
 		size:Number,
 		since:Number,

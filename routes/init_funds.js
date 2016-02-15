@@ -1,54 +1,66 @@
 
 var Funds = require('./models/fund');
 var fs = require('fs');
-//var counter = 0;
 
 function readLines(input, add_fund) {
-  var remaining = ''	//remaining input stream
+  var remaining = "";		//remaining input stream
   
-
-  
-  //process and splice stock input
+  //process and split stock input to lines
     remaining += input;
     var index = remaining.indexOf('\n');
     while (index > -1) {
       var line = remaining.substring(0, index);
       remaining = remaining.substring(index + 1);
-	  
 	  add_fund(line);
-	  
 	  index = remaining.indexOf('\n');
-	 
       
     }
 
+    //process last fund
     if (remaining.length > 0) {
       add_fund(remaining);
     }
  
 }
 
+/*
+ *take one line of fund data, splice and write to DB
+ */
 function add_fund(data) {
 	//counter++;
-	var id = '';
-	var id_int = 0;			//fund id
-	var name = '';			//fund name
-	var founder = '';		//founder name
-	var first_split = 0;	
-	var second_split = 0;
-  
-	first_split = data.indexOf(';');
-	second_split = data.substring(first_split+1).indexOf(';');
-	var temp = data.substring(second_split+1);
-	temp=temp.substring(temp.indexOf(';')+1);
-	var split = temp.indexOf(';');	
-	  
-	id = data.substring(0,first_split);
-	name = temp.substring(0,split);
-	founder = temp.substring(split+1).trim();
-	
-	
-	//console.log(id,'  ',str,'  ',founder,'  ',name);
+	var id = 0;			//fund id
+	var name = "";			//fund name
+	var founder ="";
+	var size=0;				//fund size
+	var since = 0;			//found date
+	var strategy ="";		//fund strategy
+	var type="";			//fund type
+	var region="";			//fund region
+	var field="";			//fund invest field
+	var dataArr=new Array();
+	var split_point = 0;	
+  	
+  	while (data.indexOf(';')!=-1){
+
+  		//splice data to array
+		split_point = data.indexOf(';');
+		dataArr.push(data.substring(0,split_point));
+		data=data.substring(split_point+1);
+		
+  	}
+
+	console.log(dataArr);
+	dataArr.reverse();
+
+	field = dataArr.pop();
+	region = dataArr.pop();
+	type = dataArr.pop();
+	strategy = dataArr.pop();
+	since = parseInt(dataArr.pop());
+	size = parseFloat(dataArr.pop());
+	name = dataArr.pop();
+	id  = parseInt(dataArr.pop());
+
 	var fundQuery = funds.findOne({ id: id},function (err, result){
 		
 	
@@ -61,7 +73,6 @@ function add_fund(data) {
 	var new_fund = new Funds({
 		"name" 	: name,
         "id" 	: id,
-		"id_int": id_int,
 		"founder":founder
 	});  
 	
