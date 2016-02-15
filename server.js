@@ -35,6 +35,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 //app.use(flash());
 
+var routes = require('./routes');
 var index = require('./routes/index');
 var about = require('./routes/about');
 var screen = require('./routes/screen');
@@ -45,7 +46,7 @@ var articles = require('./routes/articles');
 
 app.use('/', index);
 app.use('/', about);
-app.use('/', screen);
+app.get('/screen', routes.screen);
 app.use('/', articles);
 
 
