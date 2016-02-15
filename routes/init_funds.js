@@ -51,7 +51,7 @@ function add_fund(data) {
 
 	console.log(dataArr);
 	dataArr.reverse();
-
+	/*
 	field    = dataArr.pop();
 	region   = dataArr.pop();
 	type 	 = dataArr.pop();
@@ -89,6 +89,7 @@ function add_fund(data) {
 	});
 	}
 	});
+	*/
 }
 
 function init_funds(){
