@@ -61,7 +61,7 @@ function add_fund(data) {
 	name     = dataArr.pop();
 	id       = parseInt(dataArr.pop());
 
-	var fundQuery = fund.findOne({ id: id},function (err, result){
+	var fundQuery = Fund.findOne({ id: id},function (err, result){
 		
 	
 	if (err){
