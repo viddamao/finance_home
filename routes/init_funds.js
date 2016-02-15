@@ -11,7 +11,7 @@ function readLines(input, add_fund) {
     while (index > -1) {
       var line = remaining.substring(0, index);
       remaining = remaining.substring(index + 1);
-      console.log(line);
+      console.log(line.toString());
 	  //add_fund(line);
 	  index = remaining.indexOf('\n');
       
