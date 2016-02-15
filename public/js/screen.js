@@ -35,5 +35,5 @@ $(function(){
 	
 });
 
-var transTable = new HashMap();
-transTable.put("mixed","混合");
+var transTable = {"global","全球"};
+transTable.set("mixed","混合");
