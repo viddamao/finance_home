@@ -34,3 +34,6 @@ $(function(){
 	  
 	
 });
+
+var transTable = new HashMap();
+transTable.put("mixed","混合");

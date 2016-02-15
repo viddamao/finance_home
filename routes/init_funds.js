@@ -28,7 +28,7 @@ function readLines(input, add_fund) {
  */
 function add_fund(data) {
 	//counter++;
-	var id = 0;			//fund id
+	var id = 0;				//fund id
 	var name = "";			//fund name
 	var founder ="";
 	var size=0;				//fund size
