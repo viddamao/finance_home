@@ -3,7 +3,6 @@ var router = express.Router();
 
 
 /* GET screen page. */
-router.get('/screen', function(req, res) {
 	console.log('render screen page');
 	exports.users = function(db) {
     return function(req, res) {
@@ -17,6 +16,5 @@ router.get('/screen', function(req, res) {
         });
     };
 };
-});
 
 module.exports = router;

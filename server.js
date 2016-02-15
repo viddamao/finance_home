@@ -35,6 +35,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 //app.use(flash());
 
+
 var routes = require('./routes');
 var index = require('./routes/index');
 var about = require('./routes/about');
