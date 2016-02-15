@@ -1,5 +1,5 @@
 
-var Fund = require('./models/fund');
+var Fund = require('./models/fund.js');
 var fs = require('fs');
 
 function readLines(input, add_fund) {
