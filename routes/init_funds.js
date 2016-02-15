@@ -52,14 +52,15 @@ function add_fund(data) {
 	console.log(dataArr);
 	dataArr.reverse();
 	
-	field    = dataArr.pop();
-	region   = dataArr.pop();
-	type 	 = dataArr.pop();
-	strategy = dataArr.pop();
-	since    = parseInt(dataArr.pop());
-	size     = parseFloat(dataArr.pop());
-	name     = dataArr.pop();
 	id       = dataArr.pop();
+	name     = dataArr.pop();
+	size     = parseFloat(dataArr.pop());
+	since    = parseInt(dataArr.pop());
+	strategy = dataArr.pop();
+	type 	 = dataArr.pop();
+	region   = dataArr.pop();
+	field    = dataArr.pop();
+	
 
 	var fundQuery = Fund.findOne({ id: id},function (err, result){
 		
