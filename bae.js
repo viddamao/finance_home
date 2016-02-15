@@ -95,7 +95,7 @@ function getConnect() {
         dbcon.close();
     });
 
-    //监听关闭事件并重连  
+     
     dbcon.on('disconnected', function() {
         console.log('disconnected');
         dbcon.close();
