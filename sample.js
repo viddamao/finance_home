@@ -52,3 +52,6 @@
 		 <% results.forEach(function(r) { %>
         		<td><%= r.id %> - <%= r.name %></td>
     		<% }); %>
+
+    		  	<% console.log(transTable.get("mixed")); %>
+   				<td><% transTable.get("mixed"); %></td> 
