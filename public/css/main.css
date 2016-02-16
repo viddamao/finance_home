@@ -38,6 +38,10 @@ body{
     margin-top: 0px; }
 }
 
+footer{
+  background-color: grey;
+  
+}
 /*index*/
 #size-slider{
   margin: 10px;   
