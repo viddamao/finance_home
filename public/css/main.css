@@ -38,6 +38,12 @@ body{
     margin-top: 0px; }
 }
 
+.container {
+  min-height:100%;
+  height: auto !important;
+  height: 100%; /*IE6不识别min-height*/
+  position: relative;
+}
 .footer{
  position: absolute;
  bottom: 0;
