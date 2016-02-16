@@ -118,8 +118,10 @@ function readLines(input, add_fundRtr) {
     while (index > -1) {
       var line = remaining.substring(0, index);
       remaining = remaining.substring(index + 1);
+	  console.log(line);
 	  add_fundRtr(line);
 	  index = remaining.indexOf('\n');
+
       
     }
 
