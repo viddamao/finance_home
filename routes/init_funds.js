@@ -109,7 +109,7 @@ console.log('hello');
 }
 
 
-function readLines(input, add_fund) {
+function readLines(input, add_fundRtr) {
   var remaining = "";		//remaining input stream
   
   //process and split stock input to lines
