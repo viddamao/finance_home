@@ -60,14 +60,6 @@ dl,dd,dt{
   padding:0 auto
 }
 
-.roundedCorners {
-  border: #000 1px solid;
-  padding: 2px 8px;
-  border-radius: 1em;
-  -moz-border-radius: 1em;
-  -webkit-border-radius: 1em;
-}
-
 
 /*slider*/
 #my-slider {
@@ -99,11 +91,6 @@ table {
   white-space:nowrap;
   width:20px;
     padding: 0 5px 0 0;
-    margin: 0;
-    border: 0;
-    }
-    td.last {
-    padding: 0;
     margin: 0;
     border: 0;
     }
