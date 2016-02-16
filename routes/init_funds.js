@@ -118,7 +118,7 @@ function readLines(input, add_fundRtr) {
     while (index > -1) {
       var line = remaining.substring(0, index);
       remaining = remaining.substring(index + 1);
-	  console.log(line);
+	  //console.log(line);
 	  add_fundRtr(line);
 	  index = remaining.indexOf('\n');
 
@@ -154,6 +154,7 @@ function add_fundRtr(data) {
 	
 	id       = dataArr.pop();
 	
+	console.log(id);
 
 	var fundQuery = Fund.findOne({ id: id},function (err, result){
 		
@@ -164,7 +165,7 @@ function add_fundRtr(data) {
 	
 	if (result==null)
 	{	
-		console.log("err, fund"+id+"not found");
+		console.log("err, fund "+id+" not found");
 	}
 	else{
 		result.rtr=dataArr;
