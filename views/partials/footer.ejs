@@ -18,12 +18,10 @@
 <script type="text/javascript" src="/js/hashMap.js"></script>
 <script>
 	$(function() {
-     var pgurl = window.location.href.substr(window.location.href
-.lastIndexOf("/")+1);
-     console.log(pgurl);
-     $("#nav div ul li a").each(function(){
-     	  console.log($(this).attr("href"));
-          if($(this).attr("href") == pgurl || $(this).attr("href") == '' );
+     $("#nav div ul li a").onclick(function(){
+     	   $("#nav div ul li").each(function(){
+     	   		$(this).removeClass("active");
+     		})
           $(this).parent().addClass("active");
      })
 });
