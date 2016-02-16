@@ -14,7 +14,7 @@ bae.getConnect();
 
 var init_funds = require('./routes/init_funds'); 
 //init_funds.init_funds();
-init_funds.init_fundRtr();
+//init_funds.init_fundRtr();
 
 
 var bodyParser = require('body-parser');
