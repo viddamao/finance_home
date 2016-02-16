@@ -46,10 +46,7 @@
 #myfilters p{
 
 font-weight:bold;
-}
-
-#myfilters dl{
-  margin: 10px auto 10px;
+margin-bottom: 20px;
 }
 
 
