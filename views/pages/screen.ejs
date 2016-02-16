@@ -170,14 +170,16 @@
 	</div>  <!--my table-->
 
 
-<% var i=12435;%>
-<%=i %>
-
+   <% results.forEach(function(r) { %> 
+	<p> <%= r.id %> - <%= r.name %> </p>
+	<% }); %>
 
 </div>  <!--main display-->
 </div>	<!--row-->
 </div>  <!-- container -->
 
  <% include ../partials/footer.ejs %>
+
+ <% include ../partials/screen-footer.ejs %>
 </body>
 </html>
