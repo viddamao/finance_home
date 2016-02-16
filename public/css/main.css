@@ -39,9 +39,10 @@ body{
 }
 
 footer{
-  margin:0 auto;
+  position: absolute;
+  left:50%;
+  bottom: 0;
   background-color: grey;
-  bottom:0;
 }
 /*index*/
 #size-slider{
