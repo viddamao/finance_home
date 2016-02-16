@@ -66,7 +66,9 @@ li{
 
 font-weight:bold;
 }
-
+#my-slider{
+  margin-top: 500px;
+}
 .slider-val{
 
 border:0; 
