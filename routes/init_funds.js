@@ -173,10 +173,12 @@ function add_fundRtr(data) {
 	}
 	});
 	
+
+
 }
+
+
 function init_fundRtr(){
-
-
 var iconv = require("iconv-lite"); 
 var bin = fs.readFileSync("./public/fundRtr.txt","utf-8");
 //splice file head
@@ -191,3 +193,4 @@ console.log('hello');
 }
 
 exports.init_funds = init_funds;
+exports.init_fundRtr = init_fundRtr;
