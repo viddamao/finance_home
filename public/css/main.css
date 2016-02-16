@@ -39,10 +39,12 @@ body{
 }
 
 footer{
-  position: absolute;
-  left:50%;
-  bottom: 0;
-  background-color: grey;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ height: 60px;/*脚部的高度*/
+ background: #6cf;
+ clear:both;
 }
 /*index*/
 #size-slider{
