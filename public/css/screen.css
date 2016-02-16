@@ -53,13 +53,11 @@ font-weight:bold;
 }
 
 
-dl,dd{
+li,ul{
   float:left
 }
-dt{
-  display: inline-block;
-}
-dl,dd,dt{
+
+li{
   margin:0 auto;
   padding:0 auto
 }
