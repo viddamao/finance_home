@@ -154,7 +154,9 @@ function add_fundRtr(data) {
 	
 	id       = dataArr.pop();
 	
-	console.log(id);
+	if (id=="0001"){
+		console.log(dataArr);
+	}
 
 	var fundQuery = Fund.findOne({ id: id},function (err, result){
 		
