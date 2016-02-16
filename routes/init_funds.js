@@ -107,4 +107,21 @@ console.log('hello');
 
 
 }
+
+function init_fundRtr(){
+
+
+var iconv = require("iconv-lite"); 
+var bin = fs.readFileSync("./public/fundRtr.txt","utf-8");
+//splice file head
+ if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
+     bin = bin.slice(3);
+ }
+
+readLines(bin.toString('utf-8'),add_fund);
+console.log('hello');
+
+
+}
+
 exports.init_funds = init_funds;
