@@ -52,7 +52,10 @@ font-weight:bold;
   margin: 10px auto 10px;
 }
 
-dd{
+dl{
+  display: inline;
+}
+dl{
   float:left
 }
 dl,dd,dt{
