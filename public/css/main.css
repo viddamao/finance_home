@@ -39,7 +39,7 @@ body{
 }
 
 footer{
-  left:50%;
+  margin:0 auto;
   background-color: grey;
   bottom:0;
 }
