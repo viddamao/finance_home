@@ -65,11 +65,13 @@ dl,dd,dt{
 /*slider*/
 #my-slider {
   margin-left: 300px;
+  margin-right: 300px;
 }
 #sliders p{
 
 font-weight:bold;
 }
+
 .slider-val{
 
 border:0; 
