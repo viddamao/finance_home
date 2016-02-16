@@ -56,6 +56,9 @@ font-weight:bold;
 dl,dd{
   float:left
 }
+dt{
+  display: inline-block;
+}
 dl,dd,dt{
   margin:0 auto;
   padding:0 auto
