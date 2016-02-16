@@ -108,6 +108,72 @@ console.log('hello');
 
 }
 
+
+function readLines(input, add_fund) {
+  var remaining = "";		//remaining input stream
+  
+  //process and split stock input to lines
+    remaining += input;
+    var index = remaining.indexOf('\n');
+    while (index > -1) {
+      var line = remaining.substring(0, index);
+      remaining = remaining.substring(index + 1);
+	  add_fundRtr(line);
+	  index = remaining.indexOf('\n');
+      
+    }
+
+    //process last fund
+    if (remaining.length > 0) {
+      add_fundRtr(remaining);
+    }
+ 
+}
+
+/*
+ *take one line of fund data, splice and write to DB
+ */
+function add_fundRtr(data) {
+	//counter++;
+	var id = "";			//fund id
+	var dataArr=new Array();
+	var split_point = 0;	
+  	
+  	while (data.indexOf(';')!=-1){
+
+  		//splice data to array
+		split_point = data.indexOf(';');
+		dataArr.push(data.substring(0,split_point));
+		data=data.substring(split_point+1);
+		
+  	}
+
+	dataArr.reverse();
+	
+	id       = dataArr.pop();
+	
+
+	var fundQuery = Fund.findOne({ id: id},function (err, result){
+		
+	
+	if (err){
+		console.log('err');
+	}
+	
+	if (result==null)
+	{	
+		console.log("err, fund"+id+"not found");
+	}
+	else{
+		result.rtr=dataArr;
+		result.save(function(err, new_fund) {
+		if (err) return console.error(err);
+		//console.dir(new_fund);
+	});
+	}
+	});
+	
+}
 function init_fundRtr(){
 
 
@@ -118,7 +184,7 @@ var bin = fs.readFileSync("./public/fundRtr.txt","utf-8");
      bin = bin.slice(3);
  }
 
-readLines(bin.toString('utf-8'),add_fund);
+readLines(bin.toString('utf-8'),add_fundRtr);
 console.log('hello');
 
 
