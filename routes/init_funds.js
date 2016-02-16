@@ -155,6 +155,7 @@ function add_fundRtr(data) {
 	id       = dataArr.pop();
 	
 	if (id=="0001"){
+		console.log("lalala");
 		console.log(dataArr);
 	}
 
