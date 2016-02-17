@@ -169,8 +169,12 @@
 		</div>
 	</div>  <!--my table-->
 
-<%= id %>
-
+<% funds.forEach(function (fund, index) { %>
+      <% if (fund) { %>
+        <p class="fund"><%= fund.id %></p>
+      <% } %>
+    <% }) %>
+    
 </div>  <!--main display-->
 </div>	<!--row-->
 </div>  <!-- container -->

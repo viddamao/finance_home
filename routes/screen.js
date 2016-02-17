@@ -1,24 +1,17 @@
 var express = require('express');
 var router = express.Router();
-
+var Fund = require('../models/fund.js')
 
 /* GET screen page. */
 router.get('/screen', function(req, res) {
 	console.log('render screen page');
-	/*exports.funds = function(db) {
-    return function(req, res) {
-        var collection = db.get('funds'); //获得数据库中的集合(类似关系数据库中的表)
-        collection.find({}, {}, function(e, docs) { //取得所有的集合数据, 渲染到页面上,关键字是userlist
-            res.render('./pages/screen', {
-                "funds": docs
-            });
-        });
-    };
-};
-*/
-res.render('./pages/screen',{id:1}, function(err, html) {
+	Fund.find(function(err,funds){
+      //查询到的所有person
+    
+        res.render('./pages/screen',{funds:funds}, function(err, html) {
 		res.send(html);
 	});
+  });
 });
 
 module.exports = router;
