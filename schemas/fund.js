@@ -22,6 +22,9 @@ var fund = new mongoose.Schema({
 			
 	});
 
+fund.virtual("one_yr").get(function(rtr){
+      return rtr.pop()+rtr.pop()+rtr.pop()+rtr.pop();
+    });
 module.exports = fund;
 
 
