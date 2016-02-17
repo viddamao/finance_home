@@ -16,7 +16,7 @@ router.get('/screen', function(req, res) {
     };
 };
 */
-res.render('./pages/screen', function(err, html) {
+res.render('./pages/screen',{id:1}, function(err, html) {
 		res.send(html);
 	});
 });
