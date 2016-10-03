@@ -4,6 +4,9 @@
 About
 ====
 An web BBS platform for stock market.  
+Mainly built with Vue.js / Bootstrap for front-end, 
+express, MongoDB for backend.
+
 
 Dependencies
 ====
